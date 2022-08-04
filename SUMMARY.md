@@ -9,4 +9,4 @@
 
 ***
 
-* [About](<README (1).md>)
+* [About Me](about-me.md)
