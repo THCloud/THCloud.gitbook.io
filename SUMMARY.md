@@ -12,6 +12,11 @@
   * [粗排](ye-wu/tui-jian/cu-pai.md)
   * [model bank（unfinish）](ye-wu/tui-jian/model-bank-unfinish.md)
 
+## leetcode
+
+* [easy](leetcode/easy/README.md)
+  * [1. 两数之和](leetcode/easy/1.-liang-shu-zhi-he.md)
+
 ***
 
-* [AboutMe](aboutme.md)
+* [AboutMe](<README (1).md>)
