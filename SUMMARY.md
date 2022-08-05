@@ -27,6 +27,7 @@
   * [142. 环形链表 II](leetcode/middle/142.-huan-xing-lian-biao-ii.md)
   * [98. 验证二叉搜索树](leetcode/middle/98.-yan-zheng-er-cha-sou-suo-shu.md)
   * [438. 找到字符串中所有字母异位词](leetcode/middle/438.-zhao-dao-zi-fu-chuan-zhong-suo-you-zi-mu-yi-wei-ci.md)
+  * [424. 替换后的最长重复字符](leetcode/middle/424.-ti-huan-hou-de-zui-chang-zhong-fu-zi-fu.md)
 * [hard](leetcode/hard.md)
 
 ***
