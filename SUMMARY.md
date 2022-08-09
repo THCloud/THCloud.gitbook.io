@@ -28,6 +28,11 @@
   * [589. N 叉树的前序遍历](leetcode/easy/589.n-cha-shu-de-qian-xu-bian-li.md)
   * [704. 二分查找](leetcode/easy/704.-er-fen-cha-zhao.md)
   * [278. 第一个错误的版本](leetcode/easy/278.-di-yi-ge-cuo-wu-de-ban-ben.md)
+  * [844. 比较含退格的字符串](leetcode/easy/844.-bi-jiao-han-tui-ge-de-zi-fu-chuan.md)
+  * [1046. 最后一块石头的重量](leetcode/easy/1046.-zui-hou-yi-kuai-shi-tou-de-zhong-liang.md)
+  * [746. 使用最小花费爬楼梯](leetcode/easy/746.-shi-yong-zui-xiao-hua-fei-pa-lou-ti.md)
+  * [605. 种花问题](leetcode/easy/605.-zhong-hua-wen-ti.md)
+  * [1403. 非递增顺序的最小子序列](leetcode/easy/1403.-fei-di-zeng-shun-xu-de-zui-xiao-zi-xu-lie.md)
 * [middle](leetcode/middle/README.md)
   * [142. 环形链表 II](leetcode/middle/142.-huan-xing-lian-biao-ii.md)
   * [98. 验证二叉搜索树](leetcode/middle/98.-yan-zheng-er-cha-sou-suo-shu.md)
@@ -36,6 +41,7 @@
   * [102. 二叉树的层序遍历](leetcode/middle/102.-er-cha-shu-de-ceng-xu-bian-li.md)
   * [692. 前K个高频单词](leetcode/middle/692.-qiankge-gao-pin-dan-ci.md)
   * [394. 字符串解码](leetcode/middle/394.-zi-fu-chuan-jie-ma.md)
+  * [200. 岛屿数量](leetcode/middle/200.-dao-yu-shu-liang.md)
 * [hard](leetcode/hard.md)
 
 ***
