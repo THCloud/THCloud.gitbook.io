@@ -34,6 +34,8 @@
   * [438. 找到字符串中所有字母异位词](leetcode/middle/438.-zhao-dao-zi-fu-chuan-zhong-suo-you-zi-mu-yi-wei-ci.md)
   * [424. 替换后的最长重复字符](leetcode/middle/424.-ti-huan-hou-de-zui-chang-zhong-fu-zi-fu.md)
   * [102. 二叉树的层序遍历](leetcode/middle/102.-er-cha-shu-de-ceng-xu-bian-li.md)
+  * [692. 前K个高频单词](leetcode/middle/692.-qiankge-gao-pin-dan-ci.md)
+  * [394. 字符串解码](leetcode/middle/394.-zi-fu-chuan-jie-ma.md)
 * [hard](leetcode/hard.md)
 
 ***
