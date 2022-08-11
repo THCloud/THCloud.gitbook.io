@@ -33,6 +33,7 @@
   * [746. 使用最小花费爬楼梯](leetcode/easy/746.-shi-yong-zui-xiao-hua-fei-pa-lou-ti.md)
   * [605. 种花问题](leetcode/easy/605.-zhong-hua-wen-ti.md)
   * [1403. 非递增顺序的最小子序列](leetcode/easy/1403.-fei-di-zeng-shun-xu-de-zui-xiao-zi-xu-lie.md)
+  * [1417. 重新格式化字符串](leetcode/easy/1417.-zhong-xin-ge-shi-hua-zi-fu-chuan.md)
 * [middle](leetcode/middle/README.md)
   * [142. 环形链表 II](leetcode/middle/142.-huan-xing-lian-biao-ii.md)
   * [98. 验证二叉搜索树](leetcode/middle/98.-yan-zheng-er-cha-sou-suo-shu.md)
