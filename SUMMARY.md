@@ -35,6 +35,7 @@
   * [1403. 非递增顺序的最小子序列](leetcode/easy/1403.-fei-di-zeng-shun-xu-de-zui-xiao-zi-xu-lie.md)
   * [1417. 重新格式化字符串](leetcode/easy/1417.-zhong-xin-ge-shi-hua-zi-fu-chuan.md)
   * [342. 4的幂](leetcode/easy/342.-4-de-mi.md)
+  * [1656. 设计有序流](leetcode/easy/1656.-she-ji-you-xu-liu.md)
 * [middle](leetcode/middle/README.md)
   * [142. 环形链表 II](leetcode/middle/142.-huan-xing-lian-biao-ii.md)
   * [98. 验证二叉搜索树](leetcode/middle/98.-yan-zheng-er-cha-sou-suo-shu.md)
