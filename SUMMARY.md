@@ -45,6 +45,7 @@
   * [692. 前K个高频单词](leetcode/middle/692.-qiankge-gao-pin-dan-ci.md)
   * [394. 字符串解码](leetcode/middle/394.-zi-fu-chuan-jie-ma.md)
   * [200. 岛屿数量](leetcode/middle/200.-dao-yu-shu-liang.md)
+  * [1302. 层数最深叶子节点的和](leetcode/middle/1302.-ceng-shu-zui-shen-ye-zi-jie-dian-de-he.md)
 * [hard](leetcode/hard.md)
 
 ***
