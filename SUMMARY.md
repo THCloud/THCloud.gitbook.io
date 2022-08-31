@@ -47,6 +47,8 @@
   * [394. 字符串解码](leetcode/middle/394.-zi-fu-chuan-jie-ma.md)
   * [200. 岛屿数量](leetcode/middle/200.-dao-yu-shu-liang.md)
   * [1302. 层数最深叶子节点的和](leetcode/middle/1302.-ceng-shu-zui-shen-ye-zi-jie-dian-de-he.md)
+  * [658. 找到 K 个最接近的元素](leetcode/middle/658.-zhao-dao-k-ge-zui-jie-jin-de-yuan-su.md)
+  * [946. 验证栈序列](leetcode/middle/946.-yan-zheng-zhan-xu-lie.md)
 * [hard](leetcode/hard.md)
 
 ***
