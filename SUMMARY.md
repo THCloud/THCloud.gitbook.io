@@ -50,6 +50,7 @@
   * [1302. 层数最深叶子节点的和](leetcode/middle/1302.-ceng-shu-zui-shen-ye-zi-jie-dian-de-he.md)
   * [658. 找到 K 个最接近的元素](leetcode/middle/658.-zhao-dao-k-ge-zui-jie-jin-de-yuan-su.md)
   * [946. 验证栈序列](leetcode/middle/946.-yan-zheng-zhan-xu-lie.md)
+  * [687. 最长同值路径](leetcode/middle/687.-zui-chang-tong-zhi-lu-jing.md)
 * [hard](leetcode/hard.md)
 
 ***
