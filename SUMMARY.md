@@ -51,6 +51,7 @@
   * [658. 找到 K 个最接近的元素](leetcode/middle/658.-zhao-dao-k-ge-zui-jie-jin-de-yuan-su.md)
   * [946. 验证栈序列](leetcode/middle/946.-yan-zheng-zhan-xu-lie.md)
   * [687. 最长同值路径](leetcode/middle/687.-zui-chang-tong-zhi-lu-jing.md)
+  * [652. 寻找重复的子树](leetcode/middle/652.-xun-zhao-zhong-fu-de-zi-shu.md)
 * [hard](leetcode/hard.md)
 
 ***
