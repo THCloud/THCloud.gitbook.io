@@ -54,6 +54,10 @@
   * [652. 寻找重复的子树](leetcode/middle/652.-xun-zhao-zhong-fu-de-zi-shu.md)
 * [hard](leetcode/hard.md)
 
+## 杂学
+
+* [automake,autoconf使用详解](za-xue/automakeautoconf-shi-yong-xiang-jie.md)
+
 ***
 
 * [About Me](<README (1).md>)
