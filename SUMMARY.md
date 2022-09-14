@@ -38,6 +38,7 @@
   * [1656. 设计有序流](leetcode/easy/1656.-she-ji-you-xu-liu.md)
   * [1460. 通过翻转子数组使两个数组相等](leetcode/easy/1460.-tong-guo-fan-zhuan-zi-shu-zu-shi-liang-ge-shu-zu-xiang-deng.md)
   * [1475. 商品折扣后的最终价格](leetcode/easy/1475.-shang-pin-zhe-kou-hou-de-zui-zhong-jia-ge.md)
+  * [1619. 删除某些元素后的数组均值](leetcode/easy/1619.-shan-chu-mou-xie-yuan-su-hou-de-shu-zu-jun-zhi.md)
 * [middle](leetcode/middle/README.md)
   * [142. 环形链表 II](leetcode/middle/142.-huan-xing-lian-biao-ii.md)
   * [98. 验证二叉搜索树](leetcode/middle/98.-yan-zheng-er-cha-sou-suo-shu.md)
