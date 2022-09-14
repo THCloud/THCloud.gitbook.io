@@ -52,6 +52,7 @@
   * [946. 验证栈序列](leetcode/middle/946.-yan-zheng-zhan-xu-lie.md)
   * [687. 最长同值路径](leetcode/middle/687.-zui-chang-tong-zhi-lu-jing.md)
   * [652. 寻找重复的子树](leetcode/middle/652.-xun-zhao-zhong-fu-de-zi-shu.md)
+  * [670. 最大交换](leetcode/middle/670.-zui-da-jiao-huan.md)
 * [hard](leetcode/hard.md)
 
 ## 杂学
