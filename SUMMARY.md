@@ -55,6 +55,10 @@
   * [652. 寻找重复的子树](leetcode/middle/652.-xun-zhao-zhong-fu-de-zi-shu.md)
   * [670. 最大交换](leetcode/middle/670.-zui-da-jiao-huan.md)
 * [hard](leetcode/hard.md)
+* [算法集合](leetcode/suan-fa-ji-he/README.md)
+  * [排序](leetcode/suan-fa-ji-he/pai-xu/README.md)
+    * [1636. 按照频率将数组升序排序](leetcode/suan-fa-ji-he/pai-xu/1636.-an-zhao-pin-shuai-jiang-shu-zu-sheng-xu-pai-xu.md)
+    * [451. 根据字符出现频率排序](leetcode/suan-fa-ji-he/pai-xu/451.-gen-ju-zi-fu-chu-xian-pin-shuai-pai-xu.md)
 
 ## 杂学
 
