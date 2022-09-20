@@ -61,6 +61,7 @@
     * [451. 根据字符出现频率排序](leetcode/suan-fa-ji-he/pai-xu/451.-gen-ju-zi-fu-chu-xian-pin-shuai-pai-xu.md)
   * [DFS](leetcode/suan-fa-ji-he/dfs/README.md)
     * [698. 划分为k个相等的子集](leetcode/suan-fa-ji-he/dfs/698.-hua-fen-weikge-xiang-deng-de-zi-ji.md)
+    * [473. 火柴拼正方形](leetcode/suan-fa-ji-he/dfs/473.-huo-chai-pin-zheng-fang-xing.md)
 
 ## 杂学
 
