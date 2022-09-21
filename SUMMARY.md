@@ -64,6 +64,7 @@
     * [473. 火柴拼正方形](leetcode/suan-fa-ji-he/dfs/473.-huo-chai-pin-zheng-fang-xing.md)
   * [蓄水池采样](leetcode/suan-fa-ji-he/xu-shui-chi-cai-yang/README.md)
     * [382. 链表随机节点](leetcode/suan-fa-ji-he/xu-shui-chi-cai-yang/382.-lian-biao-sui-ji-jie-dian.md)
+    * [398. 随机数索引](leetcode/suan-fa-ji-he/xu-shui-chi-cai-yang/398.-sui-ji-shu-suo-yin.md)
 
 ## 杂学
 
