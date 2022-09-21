@@ -62,6 +62,8 @@
   * [DFS](leetcode/suan-fa-ji-he/dfs/README.md)
     * [698. 划分为k个相等的子集](leetcode/suan-fa-ji-he/dfs/698.-hua-fen-weikge-xiang-deng-de-zi-ji.md)
     * [473. 火柴拼正方形](leetcode/suan-fa-ji-he/dfs/473.-huo-chai-pin-zheng-fang-xing.md)
+  * [蓄水池采样](leetcode/suan-fa-ji-he/xu-shui-chi-cai-yang/README.md)
+    * [382. 链表随机节点](leetcode/suan-fa-ji-he/xu-shui-chi-cai-yang/382.-lian-biao-sui-ji-jie-dian.md)
 
 ## 杂学
 
