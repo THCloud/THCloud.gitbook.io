@@ -41,6 +41,7 @@
   * [1619. 删除某些元素后的数组均值](leetcode/easy/1619.-shan-chu-mou-xie-yuan-su-hou-de-shu-zu-jun-zhi.md)
   * [面试题 01.02. 判定是否互为字符重排](leetcode/easy/mian-shi-ti-01.02.-pan-ding-shi-fou-hu-wei-zi-fu-zhong-pai.md)
   * [面试题 01.09. 字符串轮转](leetcode/easy/mian-shi-ti-01.09.-zi-fu-chuan-lun-zhuan.md)
+  * [2215. 找出两数组的不同](leetcode/easy/2215.-zhao-chu-liang-shu-zu-de-bu-tong.md)
 * [middle](leetcode/middle/README.md)
   * [142. 环形链表 II](leetcode/middle/142.-huan-xing-lian-biao-ii.md)
   * [98. 验证二叉搜索树](leetcode/middle/98.-yan-zheng-er-cha-sou-suo-shu.md)
