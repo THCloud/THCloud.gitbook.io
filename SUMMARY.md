@@ -58,6 +58,7 @@
   * [652. 寻找重复的子树](leetcode/middle/652.-xun-zhao-zhong-fu-de-zi-shu.md)
   * [670. 最大交换](leetcode/middle/670.-zui-da-jiao-huan.md)
   * [面试题 01.08. 零矩阵](leetcode/middle/mian-shi-ti-01.08.-ling-ju-zhen.md)
+  * [777. 在LR字符串中交换相邻字符](leetcode/middle/777.-zai-lr-zi-fu-chuan-zhong-jiao-huan-xiang-lin-zi-fu.md)
 * [hard](leetcode/hard.md)
   * [面试题 17.19. 消失的两个数字](leetcode/hard/mian-shi-ti-17.19.-xiao-shi-de-liang-ge-shu-zi.md)
 * [算法集合](leetcode/suan-fa-ji-he/README.md)
