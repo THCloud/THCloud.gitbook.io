@@ -79,6 +79,7 @@
 
 * [automake,autoconf使用详解](za-xue/automakeautoconf-shi-yong-xiang-jie.md)
 * [TCP](za-xue/tcp.md)
+* [部署一个LangChain应用](za-xue/bu-shu-yi-ge-langchain-ying-yong.md)
 
 ***
 
