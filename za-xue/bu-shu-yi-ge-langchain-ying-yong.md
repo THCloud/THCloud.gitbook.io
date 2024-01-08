@@ -49,4 +49,8 @@ MODEL=../chatglm2-ggml.bin uvicorn chatglm_cpp.langchain_api:app --host 127.0.0.
 
 <figure><img src="../.gitbook/assets/企业微信截图_625eef28-755b-481c-8cb6-1a4aaa65555c.png" alt=""><figcaption></figcaption></figure>
 
-#### 4. 测试LangChain api
+可以通过curl来测试服务连通性
+
+```sh
+curl http://127.0.0.1:8000 -H 'Content-Type: application/json' -d '{"prompt": "你好"}'
+```
