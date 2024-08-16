@@ -75,6 +75,19 @@
     * [382. 链表随机节点](leetcode/suan-fa-ji-he/xu-shui-chi-cai-yang/382.-lian-biao-sui-ji-jie-dian.md)
     * [398. 随机数索引](leetcode/suan-fa-ji-he/xu-shui-chi-cai-yang/398.-sui-ji-shu-suo-yin.md)
 
+***
+
+* [操作系统](cao-zuo-xi-tong/README.md)
+  * [计算机的工作模式是什么样的？](cao-zuo-xi-tong/ji-suan-ji-de-gong-zuo-mo-shi-shi-shen-me-yang-de.md)
+  * [BIOS到bootloader](cao-zuo-xi-tong/bios-dao-bootloader.md)
+  * [内核初始化](cao-zuo-xi-tong/nei-he-chu-shi-hua.md)
+  * [系统调用](cao-zuo-xi-tong/xi-tong-diao-yong.md)
+  * [进程的创建](cao-zuo-xi-tong/jin-cheng-de-chuang-jian.md)
+  * [线程的创建](cao-zuo-xi-tong/xian-cheng-de-chuang-jian.md)
+  * [进程数据结构](cao-zuo-xi-tong/jin-cheng-shu-ju-jie-gou.md)
+  * [进程数据结构2](cao-zuo-xi-tong/jin-cheng-shu-ju-jie-gou-2.md)
+  * [进程数据结构3](cao-zuo-xi-tong/jin-cheng-shu-ju-jie-gou-3.md)
+
 ## 杂学
 
 * [automake,autoconf使用详解](za-xue/automakeautoconf-shi-yong-xiang-jie.md)
