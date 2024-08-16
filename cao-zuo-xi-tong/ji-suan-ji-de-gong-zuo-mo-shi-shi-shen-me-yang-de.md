@@ -1,6 +1,6 @@
 # 计算机的工作模式是什么样的？
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
 
 对于一个计算机来讲，最核心的就是 CPU（Central Processing Unit，中央处理器）。这是这台计算机的大脑，所有的设备都围绕它展开。
 
@@ -12,7 +12,7 @@ CPU 和内存是完成计算任务的核心组件，所以这里我们重点介�
 
 有了放数据的地方，也有了算的地方，还需要有个指挥到底做什么运算的地方，这就是控制单元。控制单元是一个统一的指挥中心，它可以获得下一条指令，然后执行这条指令。这个指令会指导运算单元取出数据单元中的某几个数据，计算出个结果，然后放在数据单元的某个地方。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 每个项目都有一个项目执行计划书，里面是一行行项目执行的指令，这些都是放在档案库里面的。每个进程都有一个程序放在硬盘上，是二进制的，再里面就是一行行的指令，会操作一些数据。
 
@@ -60,7 +60,7 @@ IBM 开始做 IBM PC 时，一开始并没有让最牛的华生实验室去研�
 
 我们把 CPU 里面的组件放大之后来看。
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 为了暂存数据，8086 处理器内部有 8 个 16 位的通用寄存器，也就是刚才说的 CPU 内部的数据单元，分别是 AX、BX、CX、DX、SP、BP、SI、DI。这些寄存器主要用于在计算过程中暂存数据。
 

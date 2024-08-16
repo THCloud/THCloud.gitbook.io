@@ -87,6 +87,7 @@
   * [进程数据结构](cao-zuo-xi-tong/jin-cheng-shu-ju-jie-gou.md)
   * [进程数据结构2](cao-zuo-xi-tong/jin-cheng-shu-ju-jie-gou-2.md)
   * [进程数据结构3](cao-zuo-xi-tong/jin-cheng-shu-ju-jie-gou-3.md)
+  * [调度](cao-zuo-xi-tong/diao-du.md)
 
 ## 杂学
 
