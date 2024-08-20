@@ -90,7 +90,8 @@
   * [调度](cao-zuo-xi-tong/diao-du.md)
   * [调度2](cao-zuo-xi-tong/diao-du-2.md)
   * [调度3](cao-zuo-xi-tong/diao-du-3.md)
-  * [Page 1](cao-zuo-xi-tong/page-1.md)
+  * [进程的创建](cao-zuo-xi-tong/jin-cheng-de-chuang-jian-1.md)
+  * [线程的创建](cao-zuo-xi-tong/xian-cheng-de-chuang-jian-1.md)
 
 ## 杂学
 
