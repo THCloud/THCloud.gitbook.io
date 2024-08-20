@@ -290,7 +290,7 @@ __switch_to(struct task_struct *prev_p, struct task_struct *next_p)
 
 下图就是 32 位的 TSS 结构。
 
-<figure><img src="../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2).png" alt=""><figcaption></figcaption></figure>
 
 但是这样有个缺点。我们做进程切换的时候，没必要每个寄存器都切换，这样每个进程一个 TSS，就需要全量保存，全量切换，动作太大了。
 
@@ -395,4 +395,4 @@ do {                  \
 
 这一节我们讲主动调度的过程，也即一个运行中的进程主动调用 \_\_schedule 让出 CPU。在 \_\_schedule 里面会做两件事情，第一是选取下一个进程，第二是进行上下文切换。而上下文切换又分用户态进程空间的切换和内核态的切换。
 
-<figure><img src="../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
