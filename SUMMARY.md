@@ -101,6 +101,8 @@
   * [内核态内存映射](cao-zuo-xi-tong/nei-he-tai-nei-cun-ying-she.md)
   * [文件系统](cao-zuo-xi-tong/wen-jian-xi-tong.md)
   * [硬盘文件系统](cao-zuo-xi-tong/ying-pan-wen-jian-xi-tong.md)
+  * [虚拟文件系统](cao-zuo-xi-tong/xu-ni-wen-jian-xi-tong.md)
+  * [文件缓存](cao-zuo-xi-tong/wen-jian-huan-cun.md)
 
 ## 杂学
 
