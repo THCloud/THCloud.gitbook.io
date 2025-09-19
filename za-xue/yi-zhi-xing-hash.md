@@ -22,12 +22,12 @@
 #### consistent hashing
 
 [一致性hash原理](https://www.cnblogs.com/lpfuture/p/5796398.html)\
-[consistent\_hashing](https://github.com/apache/incubator-brpc/blob/master/docs/cn/consistent\_hashing.md)
+[consistent\_hashing](https://github.com/apache/incubator-brpc/blob/master/docs/cn/consistent_hashing.md)
 
 * 把所有server的处理区间视为一个环。比如\[0, 1000)这样一个range。1000和0是相连的
 * 每个server会扩充m倍形成虚拟节点，比如一个server A，形成虚拟的(A1, A2, … Am)这些虚拟节点，这些节点无论访问哪一个，实际上都是A。所以叫虚拟节点。如果有n个server，那就是nm个虚拟节点。比如三个server(A, B, C), 扩充虚拟节点就是(A1, … Am, B1 … Bm, C1 … Cm)这些节点。
 * 虚拟节点 **随机** 插入到环中。这样每一个虚拟节点都会负责一段小range。举个例子：比如3个server(A, B, C)扩充2倍(A1, A2, B1, B2, C1, C2)，随机插入到range，比如 (A1->101, B2->203, C2->321, B1->432, A2->567, C1->800)。这样每个节点就会负责一小段range。假设是按照upper bound寻找节点，那么B2负责的range就是(101, 203], B1负责的range就是(321, 432]，A1负责的range就是(800, 101]。(因为range是个环，1000和0是首尾相连的)。
-* 基于上面，很容易理解，真实server会负责随机的区间，比如B负责的区间是(101, 203]和(321, 432]区间。同样可以得知，**由于consistent hash是随机插入虚拟节点的，并不保证所有server最后会均分区间。**但是扩充的虚拟节点越多，区间就越可能趋近于均匀。比如\[0, 1000)，如果你扩充出来1000个虚拟节点，那就一定均匀了。所以虚拟节点的存在才是一致性hash能解决热点问题的核心点。但是扩充太多同样影响查找的性能。所以扩充多少也要结合实际。在brpc里这个数字是100，也就是每个server扩充100个虚拟节点。
+* 基于上面，很容易理解，真实server会负责随机的区间，比如B负责的区间是(101, 203]和(321, 432]区间。同样可以得知，**由于consistent hash是随机插入虚拟节点的，并不保证所有server最后会均分区间。**&#x4F46;是扩充的虚拟节点越多，区间就越可能趋近于均匀。比如\[0, 1000)，如果你扩充出来1000个虚拟节点，那就一定均匀了。所以虚拟节点的存在才是一致性hash能解决热点问题的核心点。但是扩充太多同样影响查找的性能。所以扩充多少也要结合实际。在brpc里这个数字是100，也就是每个server扩充100个虚拟节点。
 * 查找比较简单，就是计算数据的hash值，这个hash值映射到range，然后寻找这个hash值对应range的虚拟节点。比如一个数据计算hash值是140，就应该由B2这个虚拟节点处理。也就是由真实server B处理。
 * 宕机掉节点问题：如果一个机器宕机，当hash到与这个机器对应的range的时候，由于这个虚拟节点（对应的真实server）已经宕机，所以他会继续寻找下一个虚拟节点。也就是说，一个server宕机了，他的所有虚拟节点负责的range，被merge到与它相邻的虚拟节点。举例子，我们假设B这个server宕机了，一条数据计算出hash值是140。根据原来的分配，应该由虚拟节点B2处理。但B2已经失效，就会继续向下找节点，找到了C2。也就是说，C2负责的range从原来的(203, 321]变成了(101, 321]。而由于虚拟节点是随机插入的，所以也能保证server宕机的时候，他负责的range会被随机的其他若干server承担。
 
@@ -37,7 +37,7 @@
 
 **工作原理**
 
-相关资料奇缺，代码实现貌似也只见过go有个相关package。基于维基百科的[Rendezvous hashing](https://en.wikipedia.org/wiki/Rendezvous\_hashing)尝试自己翻译。去解释rendezous hash的工作原理。从The HRW algorithm for rendezvous hashing这段开始，翻译了三段内容，扩号内容是我自己加的注解，更容易理解：
+相关资料奇缺，代码实现貌似也只见过go有个相关package。基于维基百科的[Rendezvous hashing](https://en.wikipedia.org/wiki/Rendezvous_hashing)尝试自己翻译。去解释rendezous hash的工作原理。从The HRW algorithm for rendezvous hashing这段开始，翻译了三段内容，扩号内容是我自己加的注解，更容易理解：
 
 **The HRW algorithm for rendezvous hashing**
 

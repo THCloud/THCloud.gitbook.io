@@ -1,6 +1,6 @@
 # 计算机的工作模式是什么样的？
 
-<figure><img src="../.gitbook/assets/image (3).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
 
 对于一个计算机来讲，最核心的就是 CPU（Central Processing Unit，中央处理器）。这是这台计算机的大脑，所有的设备都围绕它展开。
 
@@ -12,7 +12,7 @@ CPU 和内存是完成计算任务的核心组件，所以这里我们重点介�
 
 有了放数据的地方，也有了算的地方，还需要有个指挥到底做什么运算的地方，这就是控制单元。控制单元是一个统一的指挥中心，它可以获得下一条指令，然后执行这条指令。这个指令会指导运算单元取出数据单元中的某几个数据，计算出个结果，然后放在数据单元的某个地方。
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 每个项目都有一个项目执行计划书，里面是一行行项目执行的指令，这些都是放在档案库里面的。每个进程都有一个程序放在硬盘上，是二进制的，再里面就是一行行的指令，会操作一些数据。
 
@@ -60,7 +60,7 @@ IBM 开始做 IBM PC 时，一开始并没有让最牛的华生实验室去研�
 
 我们把 CPU 里面的组件放大之后来看。
 
-<figure><img src="../.gitbook/assets/image (3) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (3) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 为了暂存数据，8086 处理器内部有 8 个 16 位的通用寄存器，也就是刚才说的 CPU 内部的数据单元，分别是 AX、BX、CX、DX、SP、BP、SI、DI。这些寄存器主要用于在计算过程中暂存数据。
 
@@ -78,7 +78,7 @@ IP 寄存器就是指令指针寄存器（Instruction Pointer Register)，指向
 
 SS 是栈寄存器（Stack Register）。栈是程序运行中一个特殊的数据结构，数据的存取只能从一端进行，秉承后进先出的原则，push 就是入栈，pop 就是出栈。
 
-<figure><img src="../.gitbook/assets/image (4).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (4) (1).png" alt=""><figcaption></figcaption></figure>
 
 凡是与函数调用相关的操作，都与栈紧密相关。例如，A 调用 B，B 调用 C。当 A 调用 B 的时候，要执行 B 函数的逻辑，因而 A 运行的相关信息就会被 push 到栈里面。当 B 调用 C 的时候，同样，B 运行相关信息会被 push 到栈里面，然后才运行 C 函数的逻辑。当 C 运行完毕的时候，先 pop 出来的是 B，B 就接着调用 C 之后的指令运行下去。B 运行完了，再 pop 出来的就是 A，A 接着运行，直到结束。
 
@@ -106,7 +106,7 @@ SS 是栈寄存器（Stack Register）。栈是程序运行中一个特殊的数
 
 其中，指向下一条指令的指令指针寄存器 IP，就会扩展成 32 位的，同样也兼容 16 位的。
 
-<figure><img src="../.gitbook/assets/image (5).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (5) (1).png" alt=""><figcaption></figcaption></figure>
 
 而改动比较大，有点不兼容的就是段寄存器（Segment Register）。
 
@@ -134,5 +134,5 @@ SS 是栈寄存器（Stack Register）。栈是程序运行中一个特殊的数
 
 总结时刻 这一节，我们讲了 x86 架构。在以后的操作系统讲解中，我们也是主要基于 x86 架构进行讲解，只有了解了底层硬件的基本工作原理，将来才能理解操作系统的工作模式。
 
-<figure><img src="../.gitbook/assets/image (6).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (6) (1).png" alt=""><figcaption></figcaption></figure>
 

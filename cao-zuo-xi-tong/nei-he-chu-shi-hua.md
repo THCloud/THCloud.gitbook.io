@@ -2,7 +2,7 @@
 
 内核的启动从入口函数 start\_kernel() 开始。在 init/main.c 文件中，start\_kernel 相当于内核的 main 函数。打开这个函数，你会发现，里面是各种各样初始化函数 XXXX\_init。
 
-<figure><img src="../.gitbook/assets/image (10).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (10) (1).png" alt=""><figcaption></figcaption></figure>
 
 首先是项目管理部门。咱们将来肯定要接各种各样的项目，因此，项目管理体系和项目管理流程首先要建立起来。之前讲的创建项目都是复制老项目，现在咱们需要有第一个全新的项目。这个项目需要你这个老板来打个样。
 
@@ -24,7 +24,7 @@ vfs\_caches\_init() 会用来初始化基于内存的文件系统 rootfs。在�
 
 这里的 rootfs 还有其他用处，下面我们会用到。
 
-<figure><img src="../.gitbook/assets/image (11).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (11) (1).png" alt=""><figcaption></figcaption></figure>
 
 最后，start\_kernel() 调用的是 rest\_init()，用来做其他方面的初始化，这里面做了好多的工作。
 
@@ -52,11 +52,11 @@ rest\_init 的第一大工作是，用 kernel\_thread(kernel\_init, NULL, CLONE\
 
 所以，暂停的那一刻，要把当时 CPU 的寄存器的值全部暂存到一个地方，这个地方可以放在进程管理系统很容易获取的地方。在后面讨论进程管理数据结构的时候，我们还会详细讲。当系统调用完毕，返回的时候，再从这个地方将寄存器的值恢复回去，就能接着运行了。
 
-<figure><img src="../.gitbook/assets/image (13).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (13) (1).png" alt=""><figcaption></figcaption></figure>
 
 这个过程就是这样的：用户态 - 系统调用 - 保存寄存器 - 内核态执行系统调用 - 恢复寄存器 - 返回用户态，然后接着运行。
 
-<figure><img src="../.gitbook/assets/image (14).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (14) (1).png" alt=""><figcaption></figcaption></figure>
 
 我们再回到 1 号进程启动的过程。当前执行 kernel\_thread 这个函数的时候，我们还在内核态，现在我们就来跨越这道屏障，到用户态去运行一个程序。这该怎么办呢？很少听说“先内核态再用户态”的。
 
@@ -193,4 +193,4 @@ kernel\_thread(kthreadd, NULL, CLONE\_FS | CLONE\_FILES) 又一次使用 kernel\
 
 咱们还是用一个图来总结一下这个过程。
 
-<figure><img src="../.gitbook/assets/image (15).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (15) (1).png" alt=""><figcaption></figcaption></figure>

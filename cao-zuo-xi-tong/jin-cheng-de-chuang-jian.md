@@ -70,7 +70,7 @@ int main ()
 
 接下来我们看一下，如何从文本文件编译成二进制格式。
 
-<figure><img src="../.gitbook/assets/image (19).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (1).png" alt=""><figcaption></figcaption></figure>
 
 在上面两段代码中，上面 include 的部分是头文件，而我们写的这个.c 结尾的是源文件。
 

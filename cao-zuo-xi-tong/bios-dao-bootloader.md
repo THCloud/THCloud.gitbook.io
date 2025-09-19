@@ -12,7 +12,7 @@ BIOS 时期 当你轻轻按下计算机的启动按钮时，你的主板就加�
 
 如果你自己安装过操作系统，刚启动的时候，按某个组合键，显示器会弹出一个蓝色的界面。能够调整启动顺序的系统，就是我说的 BIOS，然后我们就可以先执行它。
 
-<figure><img src="../.gitbook/assets/image (7).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (7) (1).png" alt=""><figcaption></figcaption></figure>
 
 创业初期，你的办公室肯定很小。假如现在你有 1M 的内存地址空间。这个空间非常有限，你需要好好利用才行。
 
@@ -36,7 +36,7 @@ BIOS 完成任务后，会将 boot.img 从硬盘加载到内存中的 0x7c00 来
 
 core.img 就是管理处，它们知道的和能做的事情就多了一些。core.img 由 lzma\_decompress.img、diskboot.img、kernel.img 和一系列的模块组成，功能比较丰富，能做很多事情。
 
-<figure><img src="../.gitbook/assets/image (8).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (8) (1).png" alt=""><figcaption></figcaption></figure>
 
 boot.img 先加载的是 core.img 的第一个扇区。如果从硬盘启动的话，这个扇区里面是 diskboot.img，对应的代码是 diskboot.S。
 
@@ -80,4 +80,4 @@ kernel.img 对应的代码是 startup.S 以及一堆 c 文件，在 startup.S �
 
 启动的过程比较复杂，我这里画一个图，让你比较形象地理解这个过程。你可以根据我讲的，自己来梳理一遍这个过程，做到不管是从流程还是细节上，都能心中有数。
 
-<figure><img src="../.gitbook/assets/image (9).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (9) (1).png" alt=""><figcaption></figcaption></figure>
