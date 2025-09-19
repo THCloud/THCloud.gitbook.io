@@ -102,13 +102,13 @@ Thread 4 downloads the file file5.flv in 15 minutes.
 
 这里我们画一张图总结一下，一个普通线程的创建和运行过程。
 
-<figure><img src="../.gitbook/assets/image (25).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
 
 线程可以将项目并行起来，加快进度，但是也带来的负面影响，过程并行起来了，那数据呢？
 
 我们把线程访问的数据细分成三类。下面我们一一来看。
 
-<figure><img src="../.gitbook/assets/image (26).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
 
 第一类是线程栈上的本地数据，比如函数执行过程中的局部变量。前面我们说过，函数的调用会使用栈的模型，这在线程里面是一样的。只不过每个线程都有自己的栈空间。
 
@@ -290,7 +290,7 @@ pthread\_mutex\_lock() 就是去抢那把锁的函数，如果抢到了，就可
 
 这里我画个图，总结一下 Mutex 的使用流程。
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
 在使用 Mutex 的时候，有个问题是如果使用 pthread\_mutex\_lock()，那就需要一直在那里等着。如果是 pthread\_mutex\_trylock()，就可以不用等着，去干点儿别的，但是我怎么知道什么时候回来再试一下，是不是轮到我了呢？能不能在轮到我的时候，通知我一下呢？
 
