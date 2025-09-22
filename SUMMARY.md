@@ -106,6 +106,8 @@
   * [输入与输出](cao-zuo-xi-tong/shu-ru-yu-shu-chu.md)
   * [字符设备1](cao-zuo-xi-tong/zi-fu-she-bei-1.md)
   * [字符设备2](cao-zuo-xi-tong/zi-fu-she-bei-2.md)
+  * [块设备1](cao-zuo-xi-tong/kuai-she-bei-1.md)
+  * [块设备2](cao-zuo-xi-tong/kuai-she-bei-2.md)
 
 ## 杂学
 
