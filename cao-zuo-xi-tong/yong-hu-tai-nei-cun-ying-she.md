@@ -54,7 +54,7 @@ struct vm_area_struct {
 其实内存映射不仅仅是物理内存和虚拟内存之间的映射，还包括将文件中的内容映射到虚拟内存空间。这个时候，访问内存空间就能够访问到文件里面的数据。而仅有物理内存和虚拟内存的映射，是一种特殊情况。
 
 \
-![](<../.gitbook/assets/image (25).png>)
+![](<../.gitbook/assets/image (25) (1).png>)
 
 \
 
@@ -389,7 +389,7 @@ static int __handle_mm_fault(struct vm_area_struct *vma, unsigned long address,
 到这里，终于看到了我们熟悉的 PGD、P4G、PUD、PMD、PTE，这就是前面讲页表的时候，讲述的四级页表的概念，因为暂且不考虑五级页表，我们暂时忽略 P4G。
 
 \
-![](<../.gitbook/assets/image (26).png>)
+![](<../.gitbook/assets/image (26) (1).png>)
 
 \
 

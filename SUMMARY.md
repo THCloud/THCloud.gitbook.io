@@ -108,6 +108,16 @@
   * [字符设备2](cao-zuo-xi-tong/zi-fu-she-bei-2.md)
   * [块设备1](cao-zuo-xi-tong/kuai-she-bei-1.md)
   * [块设备2](cao-zuo-xi-tong/kuai-she-bei-2.md)
+  * [进程间通信](cao-zuo-xi-tong/jin-cheng-jian-tong-xin.md)
+  * [信号1](cao-zuo-xi-tong/xin-hao-1.md)
+  * [信号2](cao-zuo-xi-tong/xin-hao-2.md)
+  * [管道](cao-zuo-xi-tong/guan-dao.md)
+  * [IPC1](cao-zuo-xi-tong/ipc1.md)
+  * [IPC2](cao-zuo-xi-tong/ipc2.md)
+  * [IPC3](cao-zuo-xi-tong/ipc3.md)
+  * [Socket通信](cao-zuo-xi-tong/socket-tong-xin.md)
+  * [Socket通信1](cao-zuo-xi-tong/socket-tong-xin-1.md)
+  * [Socket内核数据结构](cao-zuo-xi-tong/socket-nei-he-shu-ju-jie-gou.md)
 
 ## 杂学
 

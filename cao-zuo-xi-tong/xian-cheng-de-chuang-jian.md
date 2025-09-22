@@ -102,13 +102,13 @@ Thread 4 downloads the file file5.flv in 15 minutes.
 
 这里我们画一张图总结一下，一个普通线程的创建和运行过程。
 
-<figure><img src="../.gitbook/assets/image (25) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 线程可以将项目并行起来，加快进度，但是也带来的负面影响，过程并行起来了，那数据呢？
 
 我们把线程访问的数据细分成三类。下面我们一一来看。
 
-<figure><img src="../.gitbook/assets/image (26) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 第一类是线程栈上的本地数据，比如函数执行过程中的局部变量。前面我们说过，函数的调用会使用栈的模型，这在线程里面是一样的。只不过每个线程都有自己的栈空间。
 

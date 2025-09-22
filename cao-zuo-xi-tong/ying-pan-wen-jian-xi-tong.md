@@ -3,7 +3,7 @@
 上一节，我们按照图书馆的模式，规划了档案库，也即文件系统应该有的样子。这一节，我们将这个模式搬到硬盘上来看一看。
 
 \
-![](<../.gitbook/assets/image (2) (1) (1).png>)
+![](<../.gitbook/assets/image (2) (1) (1) (1).png>)
 
 \
 
@@ -111,7 +111,7 @@ struct ext4_inode {
 在 ext2 和 ext3 中，其中前 12 项直接保存了块的位置，也就是说，我们可以通过 i\_block\[0-11]，直接得到保存文件内容的块。
 
 \
-![](<../.gitbook/assets/image (3) (1).png>)
+![](<../.gitbook/assets/image (3) (1) (1).png>)
 
 \
 
@@ -144,7 +144,7 @@ struct ext4_inode {
 Exents 如何来存储呢？它其实会保存成一棵树。
 
 \
-![](<../.gitbook/assets/image (4) (1).png>)
+![](<../.gitbook/assets/image (4) (1) (1).png>)
 
 \
 
@@ -231,7 +231,7 @@ struct ext4_extent_idx {
 上海虹桥火车站的厕位智能引导系统，不知道你有没有见过？这个系统很厉害，我们要想知道哪个位置有没有被占用，不用挨个拉门，从这样一个电子版上就能看到了。
 
 \
-![](<../.gitbook/assets/image (5) (1).png>)
+![](<../.gitbook/assets/image (5) (1) (1).png>)
 
 \
 
@@ -390,7 +390,7 @@ ino = ext4_find_next_zero_bit((unsigned long *)
 最终，整个文件系统格式就是下面这个样子。
 
 \
-![](<../.gitbook/assets/image (6) (1).png>)
+![](<../.gitbook/assets/image (6) (1) (1).png>)
 
 \
 
@@ -423,7 +423,7 @@ ino = ext4_find_next_zero_bit((unsigned long *)
 首先，块组描述符表不会保存所有块组的描述符了，而是将块组分成多个组，我们称为元块组（Meta Block Group）。每个元块组里面的块组描述符表仅仅包括自己的，一个元块组包含 64 个块组，这样一个元块组中的块组描述符表最多 64 项。我们假设一共有 256 个块组，原来是一个整的块组描述符表，里面有 256 项，要备份就全备份，现在分成 4 个元块组，每个元块组里面的块组描述符表就只有 64 项了，这就小多了，而且四个元块组自己备份自己的。
 
 \
-![](<../.gitbook/assets/image (7) (1).png>)
+![](<../.gitbook/assets/image (7) (1) (1).png>)
 
 \
 

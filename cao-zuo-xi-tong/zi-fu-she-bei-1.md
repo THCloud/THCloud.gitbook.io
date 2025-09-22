@@ -150,7 +150,7 @@ static const struct file_operations input_devices_fileops = {
 字符设备可不是一个普通的内核模块，它有自己独特的行为。接下来，我们就沿着打开一个字符设备的过程，看看字符设备这个内核模块做了哪些特殊的事情。
 
 \
-![](<../.gitbook/assets/image (6).png>)
+![](<../.gitbook/assets/image (6) (1).png>)
 
 \
 
@@ -480,7 +480,7 @@ static int chrdev_open(struct inode *inode, struct file *filp)
 当我们像打开一个文件一样打开一个字符设备之后，接下来就是对这个设备的读写。对于文件的读写咱们在文件系统那一章详细讲述过，读写的过程是类似的，所以这里我们只解析打印机驱动写入的过程。
 
 \
-![](<../.gitbook/assets/image (7).png>)
+![](<../.gitbook/assets/image (7) (1).png>)
 
 \
 
@@ -568,7 +568,7 @@ static ssize_t lp_write(struct file * file, const char __user * buf,
 对于 I/O 设备来讲，我们前面也说过，除了读写设备，还会调用 ioctl，做一些特殊的 I/O 操作。
 
 \
-![](<../.gitbook/assets/image (8).png>)
+![](<../.gitbook/assets/image (8) (1).png>)
 
 \
 

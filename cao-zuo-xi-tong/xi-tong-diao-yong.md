@@ -134,7 +134,7 @@ iret 指令将原来用户态保存的现场恢复回来，包含代码段、指
 
 这里我总结一下 32 位的系统调用是如何执行的。
 
-<figure><img src="../.gitbook/assets/image (16) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (16) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 我们再来看 64 位的情况（x86\_64 下的 sysdep.h 文件）。
 
@@ -244,7 +244,7 @@ __visible void do_syscall_64(struct pt_regs *regs)
 
 我们这里总结一下 64 位的系统调用是如何执行的。
 
-<figure><img src="../.gitbook/assets/image (17) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (17) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 前面我们重点关注了系统调用的方式，都是最终到了系统调用表，但是到底调用内核的什么函数，还没有解读。
 
@@ -365,4 +365,4 @@ asmlinkage const sys_call_ptr_t sys_call_table[__NR_syscall_max+1] = {
 
 系统调用的过程还是挺复杂的吧？如果加上上一节的内核态和用户态的模式切换，就更复杂了。这里我们重点分析 64 位的系统调用，我将整个完整的过程画了一张图，帮你总结、梳理一下。
 
-<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18) (1) (1).png" alt=""><figcaption></figcaption></figure>

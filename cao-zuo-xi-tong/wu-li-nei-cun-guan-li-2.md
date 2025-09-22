@@ -109,7 +109,7 @@ struct kmem_cache {
 最终，我们将大内存块切分成小内存块，样子就像下面这样。
 
 \
-![](<../.gitbook/assets/image (23).png>)
+![](<../.gitbook/assets/image (23) (1).png>)
 
 \
 
@@ -132,7 +132,7 @@ struct kmem_cache {
 接下来就是最重要的两个成员变量出场的时候了。kmem\_cache\_cpu 和 kmem\_cache\_node，它们都是每个 NUMA 节点上有一个，我们只需要看一个节点里面的情况。
 
 \
-![](<../.gitbook/assets/image (24).png>)
+![](<../.gitbook/assets/image (24) (1).png>)
 
 \
 
