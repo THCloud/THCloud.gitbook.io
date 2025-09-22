@@ -13,7 +13,7 @@
 那就直接用分段机制呗。我们来看看分段机制的原理。
 
 \
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (9) (1).png>)
 
 \
 
