@@ -129,6 +129,10 @@
   * [存储虚拟化1](cao-zuo-xi-tong/cun-chu-xu-ni-hua-1.md)
   * [存储虚拟化2](cao-zuo-xi-tong/cun-chu-xu-ni-hua-2.md)
   * [网络虚拟化](cao-zuo-xi-tong/wang-luo-xu-ni-hua.md)
+  * [容器](cao-zuo-xi-tong/rong-qi.md)
+  * [Namespace技术](cao-zuo-xi-tong/namespace-ji-shu.md)
+  * [cgroup技术](cao-zuo-xi-tong/cgroup-ji-shu.md)
+  * [数据中心操作系统](cao-zuo-xi-tong/shu-ju-zhong-xin-cao-zuo-xi-tong.md)
 
 ## 杂学
 
