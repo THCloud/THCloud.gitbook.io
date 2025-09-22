@@ -631,4 +631,4 @@ asmlinkage long sys_rt_sigreturn(void)
 20. 从 rt\_sigreturn 返回用户态，还是调用 exit\_to\_usermode\_loop。
 21. 这次因为 pt\_regs 已经指向 line A 了，于是就到了进程 A 中，接着系统调用之后运行，当然这个系统调用返回的是它被中断了，没有执行完的错误。
 
-![](<../.gitbook/assets/image (5).png>)\
+![](<../.gitbook/assets/image (19).png>)\

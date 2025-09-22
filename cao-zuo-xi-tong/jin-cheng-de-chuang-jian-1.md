@@ -267,6 +267,6 @@ preempt:
 
 如果新创建的进程应该抢占父进程，在什么时间抢占呢？别忘了 fork 是一个系统调用，从系统调用返回的时候，是抢占的一个好时机，如果父进程判断自己已经被设置为 TIF\_NEED\_RESCHED，就让子进程先跑，抢占自己。
 
-<figure><img src="../.gitbook/assets/image (27).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27) (1).png" alt=""><figcaption></figcaption></figure>
 
 这个图的上半部分是复制 task\_struct 结构，你可以对照着右面的 task\_struct 结构图，看这里面的成员是如何一部分一部分地被复制的。图的下半部分是唤醒新创建的子进程，如果条件满足，就会将当前进程设置应该被调度的标识位，就等着当前进程执行 \_\_schedule 了。

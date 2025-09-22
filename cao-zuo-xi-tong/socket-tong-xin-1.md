@@ -99,7 +99,7 @@ socket 函数有三个参数。
 接下来我们来看，针对 TCP，我们应该如何编程。
 
 \
-![](<../.gitbook/assets/image (20).png>)
+![](<../.gitbook/assets/image (34).png>)
 
 \
 
@@ -163,7 +163,7 @@ struct in_addr {
 接下来，就要建立 TCP 的连接了，也就是著名的三次握手，其实就是将客户端和服务端的状态通过三次网络交互，达到初始状态是协同的状态。下图就是三次握手的序列图以及对应的状态转换。
 
 \
-![](<../.gitbook/assets/image (21).png>)
+![](<../.gitbook/assets/image (35).png>)
 
 \
 
@@ -221,7 +221,7 @@ int connect(int sockfd, const struct sockaddr *addr, socklen_t addrlen);
 接下来我们来看，针对 UDP 应该如何编程。
 
 \
-![](<../.gitbook/assets/image (22).png>)
+![](<../.gitbook/assets/image (36).png>)
 
 \
 
@@ -260,4 +260,4 @@ UDP 是没有连接的，所以不需要三次握手，也就不需要调用 lis
 * 客户端调用 write 写入数据；
 * 服务端调用 read 读取数据。
 
-<figure><img src="../.gitbook/assets/image (23).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>

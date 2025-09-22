@@ -735,7 +735,7 @@ inet\_csk\_accept 的实现，印证了上面我们讲的两个队列的逻辑�
 什么情况下，icsk\_accept\_queue 才不为空呢？当然是三次握手结束才可以。接下来我们来分析三次握手的过程。
 
 \
-![](<../.gitbook/assets/image (25).png>)
+![](<../.gitbook/assets/image (39).png>)
 
 \
 

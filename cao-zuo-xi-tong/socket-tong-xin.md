@@ -22,7 +22,7 @@
 我们假设这里就涉及三台机器。Linux 服务器 A 和 Linux 服务器 B 处于不同的网段，通过中间的 Linux 服务器作为路由器进行转发。
 
 \
-![](<../.gitbook/assets/image (17).png>)
+![](<../.gitbook/assets/image (31).png>)
 
 \
 
@@ -30,7 +30,7 @@
 说到网络协议，我们还需要简要介绍一下两种网络协议模型，一种是 **OSI 的标准七层模型**，一种是**业界标准的 TCP/IP 模型**。它们的对应关系如下图所示：
 
 \
-![](<../.gitbook/assets/image (18).png>)
+![](<../.gitbook/assets/image (32).png>)
 
 \
 
@@ -162,7 +162,7 @@ MAC 地址的定位功能局限在一个网络里面，也即同一个网络号�
 在 Linux 服务器 A 上的客户端，打开一个 Firefox 连接 Ngnix。也是通过 Socket，客户端会被分配一个随机端口 12345。同理，打开一个 Chrome 连接 Tomcat，同样通过 Socket 分配随机端口 12346。
 
 \
-![](<../.gitbook/assets/image (19).png>)
+![](<../.gitbook/assets/image (33).png>)
 
 \
 

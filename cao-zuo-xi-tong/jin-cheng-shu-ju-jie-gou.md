@@ -2,7 +2,7 @@
 
 在 Linux 里面，无论是进程，还是线程，到了内核里面，我们统一都叫任务（Task），由一个统一的结构 task\_struct 进行管理。这个结构非常复杂，但你也不用怕，我们慢慢来解析。
 
-<figure><img src="../.gitbook/assets/image (33).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (33) (1).png" alt=""><figcaption></figcaption></figure>
 
 接下来，我们沿着建立项目管理体系的思路，设想一下，Linux 的任务管理都应该干些啥？
 
@@ -73,7 +73,7 @@ task\_struct 里面有一个 struct sigpending pending。如果我们进入 stru
 
 作为一个项目经理，另外一个需要关注的是项目当前的状态。例如，在 Jira 里面，任务的运行就可以分成下面的状态。
 
-<figure><img src="../.gitbook/assets/image (32).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (32) (1).png" alt=""><figcaption></figcaption></figure>
 
 在 task\_struct 里面，涉及任务状态的是下面这几个变量：
 
@@ -108,7 +108,7 @@ state（状态）可以取的值定义在 include/linux/sched.h 头文件中。
 
 从定义的数值很容易看出来，state 是通过 bitset 的方式设置的，也就是说，当前是什么状态，哪一位就置一。
 
-<figure><img src="../.gitbook/assets/image (31).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (31) (1).png" alt=""><figcaption></figcaption></figure>
 
 TASK\_RUNNING 并不是说进程正在运行，而是表示进程在时刻准备运行的状态。当处于这个状态的进程获得时间片的时候，就是在运行中；如果没有获得时间片，就说明它被其他进程抢占了，在等待再次分配时间片。
 
@@ -178,4 +178,4 @@ cpumask_t      cpus_allowed;
 struct sched_info    sched_info;
 ```
 
-<figure><img src="../.gitbook/assets/image (30).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (30) (1).png" alt=""><figcaption></figcaption></figure>

@@ -17,7 +17,7 @@ void  *stack;
 
 在进程的内存空间里面，栈是一个从高地址到低地址，往下增长的结构，也就是上面是栈底，下面是栈顶，入栈和出栈的操作都是从下面的栈顶开始的。
 
-<figure><img src="../.gitbook/assets/image (40).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (40) (1).png" alt=""><figcaption></figcaption></figure>
 
 我们先来看 32 位操作系统的情况。在 CPU 里，ESP（Extended Stack Pointer）是栈顶指针寄存器，入栈操作 Push 和出栈操作 Pop 指令，会自动调整 ESP 的值。另外有一个寄存器 EBP（Extended Base Pointer），是栈基地址指针寄存器，指向当前栈帧的最底部。
 
@@ -31,7 +31,7 @@ void  *stack;
 
 然而，前 6 个参数有时候需要进行寻址，但是如果在寄存器里面，是没有地址的，因而还是会放到栈里面，只不过放到栈里面的操作是被调用函数做的。
 
-<figure><img src="../.gitbook/assets/image (39).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (39) (1).png" alt=""><figcaption></figcaption></figure>
 
 以上的栈操作，都是在进程的内存空间里面进行的。
 
@@ -62,7 +62,7 @@ Linux 给每个 task 都分配了内核栈。在 32 位系统上 arch/x86/includ
 
 内核栈是一个非常特殊的结构，如下图所示：
 
-<figure><img src="../.gitbook/assets/image (38).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (38) (1).png" alt=""><figcaption></figcaption></figure>
 
 这段空间的最低位置，是一个 thread\_info 结构。这个结构是对 task\_struct 结构的补充。因为 task\_struct 结构庞大但是通用，不同的体系结构就需要保存不同的东西，所以往往与体系结构有关的，都放在 thread\_info 里面。
 
@@ -304,4 +304,4 @@ return prev_p;
 
 在内核态，32 位和 64 位的内核栈和 task\_struct 的关联关系不同。32 位主要靠 thread\_info，64 位主要靠 Per-CPU 变量。
 
-<figure><img src="../.gitbook/assets/image (37).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (37) (1).png" alt=""><figcaption></figcaption></figure>

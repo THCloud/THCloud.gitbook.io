@@ -650,7 +650,7 @@ struct sem_undo_list {
 假设我们创建了两个信号量集合。一个叫 semaphore1，它包含三个信号量，初始化值为 3，另一个叫 semaphore2，它包含 4 个信号量，初始化值都为 4。初始化时候的信号量以及 undo 结构里面的值如图中 (1) 标号所示。
 
 \
-![](<../.gitbook/assets/image (15).png>)
+![](<../.gitbook/assets/image (29).png>)
 
 \
 
@@ -682,7 +682,7 @@ struct sem_undo_list {
 信号量的机制也很复杂，我们对着下面这个图总结一下。
 
 \
-![](<../.gitbook/assets/image (16).png>)
+![](<../.gitbook/assets/image (30).png>)
 
 \
 

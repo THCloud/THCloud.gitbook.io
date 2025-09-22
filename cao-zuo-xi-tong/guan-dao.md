@@ -25,7 +25,7 @@ int pipe(int fd[2])
 在这里，我们创建了一个管道 pipe，返回了两个文件描述符，这表示管道的两端，一个是管道的读取端描述符 fd\[0]，另一个是管道的写入端描述符 fd\[1]。
 
 \
-![](<../.gitbook/assets/image (6).png>)
+![](<../.gitbook/assets/image (20).png>)
 
 \
 
@@ -231,7 +231,7 @@ const struct file_operations pipefifo_fops = {
 但是这个时候，两个文件描述符都是在一个进程里面的，并没有起到进程间通信的作用，怎么样才能使得管道是跨两个进程的呢？还记得创建进程调用的 fork 吗？在这里面，创建的子进程会复制父进程的 struct files\_struct，在这里面 fd 的数组会复制一份，但是 fd 指向的 struct file 对于同一个文件还是只有一份，这样就做到了，两个进程各有两个 fd 指向同一个 struct file 的模式，两个进程就可以通过各自的 fd 写入和读取同一个管道文件实现跨进程通信了。
 
 \
-![](<../.gitbook/assets/image (7).png>)
+![](<../.gitbook/assets/image (21).png>)
 
 \
 
@@ -284,7 +284,7 @@ int main(int argc, char *argv[])
 ```
 
 \
-![](<../.gitbook/assets/image (8).png>)
+![](<../.gitbook/assets/image (22).png>)
 
 \
 
@@ -302,7 +302,7 @@ int main(int argc, char *argv[])
 我们首先从 shell 创建子进程 A，然后在 shell 和 A 之间建立一个管道，其中 shell 保留读取端，A 进程保留写入端，然后 shell 再创建子进程 B。这又是一次 fork，所以，shell 里面保留的读取端的 fd 也被复制到了子进程 B 里面。这个时候，相当于 shell 和 B 都保留读取端，只要 shell 主动关闭读取端，就变成了一管道，写入端在 A 进程，读取端在 B 进程。
 
 \
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (23).png>)
 
 \
 
@@ -357,7 +357,7 @@ struct files_struct {
 至此，我们才将 A|B 的功能完成。
 
 \
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (24).png>)
 
 \
 
@@ -627,4 +627,4 @@ static int fifo_open(struct inode *inode, struct file *filp)
 
 写入一个 pipe 就是从 struct file 结构找到缓存写入，读取一个 pipe 就是从 struct file 结构找到缓存读出。
 
-![](<../.gitbook/assets/image (11).png>)\
+![](<../.gitbook/assets/image (25).png>)\

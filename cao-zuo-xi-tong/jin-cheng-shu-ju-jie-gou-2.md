@@ -28,7 +28,7 @@ children 表示链表的头部。链表中的所有元素都是它的子进程�
 
 sibling 用于把当前进程插入到兄弟链表中。
 
-<figure><img src="../.gitbook/assets/image (35).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (35) (1).png" alt=""><figcaption></figcaption></figure>
 
 通常情况下，real\_parent 和 parent 是一样的，但是也会有另外的情况存在。例如，bash 创建一个进程，那进程的 parent 和 real\_parent 就都是 bash。如果在 bash 上使用 GDB 来 debug 一个进程，这个时候 GDB 是 parent，bash 是这个进程的 real\_parent。
 
@@ -84,7 +84,7 @@ struct cred {
 
 但是也有特殊的情况。
 
-<figure><img src="../.gitbook/assets/image (36).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (36) (1).png" alt=""><figcaption></figcaption></figure>
 
 例如，用户 A 想玩一个游戏，这个游戏的程序是用户 B 安装的。游戏这个程序文件的权限为 rwxr–r--。A 是没有权限运行这个程序的，所以用户 B 要给用户 A 权限才行。用户 B 说没问题，都是朋友嘛，于是用户 B 就给这个程序设定了所有的用户都能执行的权限 rwxr-xr-x，说兄弟你玩吧。
 
@@ -151,4 +151,4 @@ struct files_struct             *files;
 
 你可以对着下面这张图，看看自己是否真的理解了，进程树是如何组织的，以及如何控制进程的权限的。
 
-<figure><img src="../.gitbook/assets/image (34).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (34) (1).png" alt=""><figcaption></figcaption></figure>
