@@ -89,7 +89,7 @@ current->mm->task_size = TASK_SIZE;
 对于 64 位系统，虚拟地址只使用了 48 位。就像代码里面写的一样，1 左移了 47 位，就相当于 48 位地址空间一半的位置，0x0000800000000000，然后减去一个页，就是 0x00007FFFFFFFF000，共 128T。同样，内核空间也是 128T。内核空间和用户空间之间隔着很大的空隙，以此来进行隔离。
 
 \
-![](<../.gitbook/assets/image (15) (1).png>)
+![](<../.gitbook/assets/image (15) (1) (1).png>)
 
 ### 用户态布局
 
@@ -157,7 +157,7 @@ mmap\_base 表示虚拟地址空间中用于内存映射的起始地址。一般
 这下所有用户态的区域的位置基本上都描述清楚了。整个布局就像下面这张图这样。虽然 32 位和 64 位的空间相差很大，但是区域的类别和布局是相似的。
 
 \
-![](<../.gitbook/assets/image (16) (1).png>)
+![](<../.gitbook/assets/image (16) (1) (1).png>)
 
 \
 
@@ -275,7 +275,7 @@ load\_elf\_binary 会完成以下的事情：
 最终就形成下面这个内存映射图。
 
 \
-![](<../.gitbook/assets/image (17) (1).png>)
+![](<../.gitbook/assets/image (17) (1) (1).png>)
 
 \
 
@@ -437,7 +437,7 @@ out:
 我们来看 32 位的内核态的布局。
 
 \
-![](<../.gitbook/assets/image (18) (1).png>)
+![](<../.gitbook/assets/image (18) (1) (1).png>)
 
 \
 
@@ -541,7 +541,7 @@ out:
 64 位的内存布局如图所示。
 
 \
-![](<../.gitbook/assets/image (19) (1).png>)
+![](<../.gitbook/assets/image (19) (1) (1).png>)
 
 \
 

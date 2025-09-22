@@ -8,7 +8,7 @@
 这种方式有点儿像咱们运维一个线上系统，为了应对一些突发事件，往往需要制定应急预案。就像下面的列表中一样。一旦发生了突发事件，马上能够找到负责人，根据处理步骤进行紧急响应，并且在限定的事件内搞定。
 
 \
-![](<../.gitbook/assets/image (17).png>)
+![](<../.gitbook/assets/image (17) (1).png>)
 
 \
 
@@ -383,4 +383,4 @@ int do_sigaction(int sig, struct k_sigaction *act, struct k_sigaction *oact)
 * 无论是 \_\_sysv\_signal 还是 \_\_sigaction，调用的都是统一的一个系统调用 rt\_sigaction。
 * 在内核中，rt\_sigaction 调用的是 do\_sigaction 设置信号处理函数。在每一个进程的 task\_struct 里面，都有一个 sighand 指向 struct sighand\_struct，里面是一个数组，下标是信号，里面的内容是信号处理函数。
 
-<figure><img src="../.gitbook/assets/image (18).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (18) (1).png" alt=""><figcaption></figcaption></figure>

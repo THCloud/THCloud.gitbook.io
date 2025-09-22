@@ -159,7 +159,7 @@ static inline int fib_lookup(struct net *net, const struct flowi4 *flp, struct f
 之前我们讲过一个简单的拓扑图，里面的三台 Linux 机器的路由表都可以通过 ip route 命令查看。
 
 \
-![](<../.gitbook/assets/image (7).png>)
+![](<../.gitbook/assets/image (7) (1).png>)
 
 \
 
@@ -195,7 +195,7 @@ fib\_table\_lookup 的代码逻辑比较复杂，好在注释比较清楚。因�
 为了更方面的做这个事情，我们使用了 Trie 树这种结构。比如我们有一系列的字符串：{bcs#, badge#, baby#, back#, badger#, badness#}。之所以每个字符串都加上 #，是希望不要一个字符串成为另外一个字符串的前缀。然后我们把它们放在 Trie 树中，如下图所示：
 
 \
-![](<../.gitbook/assets/image (8).png>)
+![](<../.gitbook/assets/image (8) (1).png>)
 
 \
 
@@ -260,7 +260,7 @@ struct rtable *rt_dst_alloc(struct net_device *dev,
 第二部分，就是准备 IP 层的头，往里面填充内容。这就要对着 IP 层的头的格式进行理解。
 
 \
-![](<../.gitbook/assets/image (9).png>)
+![](<../.gitbook/assets/image (9) (1).png>)
 
 \
 
@@ -311,7 +311,7 @@ ip\_local\_out 先是调用 \_\_ip\_local\_out，然后里面调用了 nf\_hook�
 一个著名的实现，就是内核模块 ip\_tables。在用户态，还有一个客户端程序 iptables，用命令行来干预内核的规则。
 
 \
-![](<../.gitbook/assets/image (10).png>)
+![](<../.gitbook/assets/image (10) (1).png>)
 
 \
 
@@ -343,7 +343,7 @@ nat 表主要处理网络地址转换，可以进行 SNAT（改变源地址）�
 * POSTROUTING 链：在数据包离开时改变数据包的源地址
 
 \
-![](<../.gitbook/assets/image (11).png>)
+![](<../.gitbook/assets/image (11) (1).png>)
 
 \
 
@@ -849,7 +849,7 @@ static int __dev_queue_xmit(struct sk_buff *skb, void *accel_priv)
 pfifo\_fast 分为三个先入先出的队列，我们能称为三个 Band。根据网络包里面的 TOS，看这个包到底应该进入哪个队列。TOS 总共四位，每一位表示的意思不同，总共十六种类型。
 
 \
-![](<../.gitbook/assets/image (12).png>)
+![](<../.gitbook/assets/image (12) (1).png>)
 
 \
 
@@ -1170,7 +1170,7 @@ ixgb_xmit_frame(struct sk_buff *skb, struct net_device *netdev)
 这一节，我们继续解析了发送一个网络包的过程，我们整个过程的图画在了下面。
 
 \
-![](<../.gitbook/assets/image (13).png>)
+![](<../.gitbook/assets/image (13) (1).png>)
 
 \
 

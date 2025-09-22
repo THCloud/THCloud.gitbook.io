@@ -122,6 +122,13 @@
   * [发送网络包2](cao-zuo-xi-tong/fa-song-wang-luo-bao-2.md)
   * [接收网络包1](cao-zuo-xi-tong/jie-shou-wang-luo-bao-1.md)
   * [接收网络包2](cao-zuo-xi-tong/jie-shou-wang-luo-bao-2.md)
+  * [虚拟机](cao-zuo-xi-tong/xu-ni-ji.md)
+  * [计算虚拟化之CPU 1](cao-zuo-xi-tong/ji-suan-xu-ni-hua-zhi-cpu-1.md)
+  * [计算虚拟化之CPU2](cao-zuo-xi-tong/ji-suan-xu-ni-hua-zhi-cpu2.md)
+  * [计算虚拟化之内存](cao-zuo-xi-tong/ji-suan-xu-ni-hua-zhi-nei-cun.md)
+  * [存储虚拟化1](cao-zuo-xi-tong/cun-chu-xu-ni-hua-1.md)
+  * [存储虚拟化2](cao-zuo-xi-tong/cun-chu-xu-ni-hua-2.md)
+  * [网络虚拟化](cao-zuo-xi-tong/wang-luo-xu-ni-hua.md)
 
 ## 杂学
 

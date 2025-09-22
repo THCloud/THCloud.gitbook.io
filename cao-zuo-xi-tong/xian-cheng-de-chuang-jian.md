@@ -102,13 +102,13 @@ Thread 4 downloads the file file5.flv in 15 minutes.
 
 这里我们画一张图总结一下，一个普通线程的创建和运行过程。
 
-<figure><img src="../.gitbook/assets/image (25) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (25) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 线程可以将项目并行起来，加快进度，但是也带来的负面影响，过程并行起来了，那数据呢？
 
 我们把线程访问的数据细分成三类。下面我们一一来看。
 
-<figure><img src="../.gitbook/assets/image (26) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (26) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 第一类是线程栈上的本地数据，比如函数执行过程中的局部变量。前面我们说过，函数的调用会使用栈的模型，这在线程里面是一样的。只不过每个线程都有自己的栈空间。
 
@@ -290,7 +290,7 @@ pthread\_mutex\_lock() 就是去抢那把锁的函数，如果抢到了，就可
 
 这里我画个图，总结一下 Mutex 的使用流程。
 
-<figure><img src="../.gitbook/assets/image (27) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (27) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 在使用 Mutex 的时候，有个问题是如果使用 pthread\_mutex\_lock()，那就需要一直在那里等着。如果是 pthread\_mutex\_trylock()，就可以不用等着，去干点儿别的，但是我怎么知道什么时候回来再试一下，是不是轮到我了呢？能不能在轮到我的时候，通知我一下呢？
 
@@ -390,7 +390,7 @@ int main(int argc, char *argv[])
 
 接下来声明的 pthread\_mutex\_t g\_task\_lock 和 pthread\_cond\_t g\_task\_cv，是用于通知和抢任务的，工作模式如下图所示：
 
-<figure><img src="../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 图中左边的就是员工的工作模式，对于每一个员工 coder，先要获取锁 pthread\_mutex\_lock，这样才能保证一个任务只分配给一个员工。
 
@@ -494,4 +494,4 @@ No task now! Thread 3491833600 is waiting!
 
 写多线程的程序是有套路的，我这里用一张图进行总结。你需要记住的是，创建线程的套路、mutex 使用的套路、条件变量使用的套路。
 
-<figure><img src="../.gitbook/assets/image (29) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (29) (1) (1).png" alt=""><figcaption></figcaption></figure>

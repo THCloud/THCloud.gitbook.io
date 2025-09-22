@@ -70,7 +70,7 @@ int main ()
 
 接下来我们看一下，如何从文本文件编译成二进制格式。
 
-<figure><img src="../.gitbook/assets/image (19) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (19) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 在上面两段代码中，上面 include 的部分是头文件，而我们写的这个.c 结尾的是源文件。
 
@@ -85,7 +85,7 @@ gcc -c -fPIC createprocess.c
 
 这个文件的格式是这样的：
 
-<figure><img src="../.gitbook/assets/image (20) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (20) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ELF 文件的头是用于描述整个文件的。这个文件格式在内核中有定义，分别为 struct elf32\_hdr 和 struct elf64\_hdr。
 
@@ -133,7 +133,7 @@ gcc -o staticcreateprocess createprocess.o -L. -lstaticprocess
 
 形成的二进制文件叫可执行文件，是 ELF 的第二种格式，格式如下：
 
-<figure><img src="../.gitbook/assets/image (21) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (21) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 这个格式和.o 文件大致相似，还是分成一个个的 section，并且被节头表描述。只不过这些 section 是多个.o 文件合并过的。但是这个时候，这个文件已经是马上就可以加载到内存里面执行的文件了，因而这些 section 被分成了需要加载到内存里面的代码段、数据段和不需要加载到内存里面的部分，将小的 section 合成了大的段 segment，并且在最前面加一个段头表（Segment Header Table）。在代码里面的定义为 struct elf32\_phdr 和 struct elf64\_phdr，这里面除了有对于段的描述之外，最重要的是 p\_vaddr，这个是这个段加载到内存的虚拟地址。
 
@@ -251,13 +251,13 @@ exec 比较特殊，它是一组函数：
 
 包含 e 的函数（execve, execle）以数组的形式接收环境变量。
 
-<figure><img src="../.gitbook/assets/image (22) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (22) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 在上面 process.c 的代码中，我们创建 ls 进程，也是通过 exec。
 
 既然所有的进程都是从父进程 fork 过来的，那总归有一个祖宗进程，这就是咱们系统启动的 init 进程。
 
-<figure><img src="../.gitbook/assets/image (23) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (23) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 在解析 Linux 的启动过程的时候，1 号进程是 /sbin/init。如果在 centOS 7 里面，我们 ls 一下，可以看到，这个进程是被软链接到 systemd 的。
 
@@ -305,4 +305,4 @@ pts 的父进程是 sshd，bash 的父进程是 pts，ps -ef 这个命令的父�
 
 我们首先通过图右边的文件编译过程，生成 so 文件和可执行文件，放在硬盘上。下图左边的用户态的进程 A 执行 fork，创建进程 B，在进程 B 的处理逻辑中，执行 exec 系列系统调用。这个系统调用会通过 load\_elf\_binary 方法，将刚才生成的可执行文件，加载到进程 B 的内存中执行。
 
-<figure><img src="../.gitbook/assets/image (24) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (24) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

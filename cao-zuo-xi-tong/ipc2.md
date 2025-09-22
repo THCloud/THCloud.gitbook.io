@@ -200,7 +200,7 @@ static inline struct shmid_kernel *shm_obtain_object(struct ipc_namespace *ns, i
 通过这种机制，我们就可以将信号量、消息队列、共享内存抽象为 ipc 类型进行统一处理。你有没有觉得，这有点儿面向对象编程中抽象类和实现类的意思？没错，如果你试图去了解 C++ 中类的实现机制，其实也是这么干的。
 
 \
-![](<../.gitbook/assets/image (27).png>)
+![](<../.gitbook/assets/image (27) (1).png>)
 
 \
 
@@ -749,4 +749,4 @@ shmem\_fault 会调用 shmem\_getpage\_gfp 在 page cache 和 swap 中找一个�
 11. vm\_area\_struct 的 vm\_ops 的 shm\_fault 会调用 shm\_file\_data 的 vm\_ops 的 shmem\_fault。
 12. 在 page cache 中找一个空闲页，或者创建一个空闲页。
 
-<figure><img src="../.gitbook/assets/image (28).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (28) (1).png" alt=""><figcaption></figcaption></figure>

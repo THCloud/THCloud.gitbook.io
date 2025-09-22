@@ -368,7 +368,7 @@ struct sk_buff {
 为了减少内存拷贝的代价，有的网络设备支持**分散聚合**（Scatter/Gather）I/O，顾名思义，就是 IP 层没必要通过内存拷贝进行聚合，让散的数据零散的放在原处，在设备层进行聚合。如果使用这种模式，网络包的数据就不会放在连续的数据区域，而是放在 struct skb\_shared\_info 结构里面指向的离散数据，skb\_shared\_info 的成员变量 skb\_frag\_t frags\[MAX\_SKB\_FRAGS]，会指向一个数组的页面，就不能保证连续了。
 
 \
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (29).png>)
 
 \
 
@@ -477,7 +477,7 @@ repair:
 那窗口大小是多少呢？就是遵循下面这个著名的拥塞窗口变化图。
 
 \
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 \
 
@@ -495,7 +495,7 @@ repair:
 第三个概念就是**接收窗口** rwnd 的概念（receive window），也叫滑动窗口。如果说拥塞窗口是为了怕把网络塞满，在出现丢包的时候减少发送速度，那么滑动窗口就是为了怕把接收方塞满，而控制发送速度。
 
 \
-![](<../.gitbook/assets/image (2).png>)
+![](<../.gitbook/assets/image (2) (1).png>)
 
 \
 
@@ -511,7 +511,7 @@ repair:
 * 第四部分：没有发送，并且暂时还不会发送的。这部分已经超过了接收方的接收能力，再发送接收方就收不了了。
 
 \
-![](<../.gitbook/assets/image (3).png>)
+![](<../.gitbook/assets/image (3) (1).png>)
 
 \
 
@@ -630,7 +630,7 @@ static int tcp_transmit_skb(struct sock *sk, struct sk_buff *skb, int clone_it,
 tcp\_transmit\_skb 这个函数比较长，主要做了两件事情，第一件事情就是填充 TCP 头，如果我们对着 TCP 头的格式。
 
 \
-![](<../.gitbook/assets/image (4).png>)
+![](<../.gitbook/assets/image (4) (1).png>)
 
 \
 
@@ -668,7 +668,7 @@ const struct inet_connection_sock_af_ops ipv4_specific = {
 这一节，我们解析了发送一个网络包的一部分过程，如下图所示。
 
 \
-![](<../.gitbook/assets/image (5).png>)
+![](<../.gitbook/assets/image (5) (1).png>)
 
 \
 

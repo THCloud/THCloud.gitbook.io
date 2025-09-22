@@ -13,7 +13,7 @@
 那就直接用分段机制呗。我们来看看分段机制的原理。
 
 \
-![](<../.gitbook/assets/image (9) (1) (1).png>)
+![](<../.gitbook/assets/image (9) (1) (1) (1).png>)
 
 \
 
@@ -26,7 +26,7 @@
 例如，我们将上面的虚拟空间分成以下 4 个段，用 0～3 来编号。每个段在段表中有一个项，在物理空间中，段的排列如下图的右边所示。
 
 \
-![](<../.gitbook/assets/image (10) (1).png>)
+![](<../.gitbook/assets/image (10) (1) (1).png>)
 
 \
 
@@ -123,7 +123,7 @@ EXPORT_PER_CPU_SYMBOL_GPL(gdt_page);
 这个换入和换出都是以页为单位的。页面的大小一般为 4KB。为了能够定位和访问每个页，需要有个页表，保存每个页的起始地址，再加上在页内的偏移量，组成线性地址，就能对于内存中的每个位置进行访问了。
 
 \
-![](<../.gitbook/assets/image (11) (1).png>)
+![](<../.gitbook/assets/image (11) (1) (1).png>)
 
 \
 
@@ -136,7 +136,7 @@ EXPORT_PER_CPU_SYMBOL_GPL(gdt_page);
 下面的图，举了一个简单的页表的例子，虚拟内存中的页通过页表映射为了物理内存中的页。
 
 \
-![](<../.gitbook/assets/image (12) (1).png>)
+![](<../.gitbook/assets/image (12) (1) (1).png>)
 
 \
 
@@ -164,7 +164,7 @@ EXPORT_PER_CPU_SYMBOL_GPL(gdt_page);
 这样加起来正好 32 位，也就是用前 10 位定位到页目录表中的一项。将这一项对应的页表取出来共 1k 项，再用中间 10 位定位到页表中的一项，将这一项对应的存放数据的页取出来，再用最后 12 位定位到页中的具体位置访问数据。
 
 \
-![](<../.gitbook/assets/image (13) (1).png>)
+![](<../.gitbook/assets/image (13) (1) (1).png>)
 
 \
 
@@ -182,7 +182,7 @@ EXPORT_PER_CPU_SYMBOL_GPL(gdt_page);
 当然对于 64 位的系统，两级肯定不够了，就变成了四级目录，分别是全局页目录项 PGD（Page Global Directory）、上层页目录项 PUD（Page Upper Directory）、中间页目录项 PMD（Page Middle Directory）和页表项 PTE（Page Table Entry）。
 
 \
-![](<../.gitbook/assets/image (14) (1).png>)
+![](<../.gitbook/assets/image (14) (1) (1).png>)
 
 ### 总结时刻
 
