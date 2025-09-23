@@ -133,6 +133,13 @@
   * [Namespace技术](cao-zuo-xi-tong/namespace-ji-shu.md)
   * [cgroup技术](cao-zuo-xi-tong/cgroup-ji-shu.md)
   * [数据中心操作系统](cao-zuo-xi-tong/shu-ju-zhong-xin-cao-zuo-xi-tong.md)
+  * [搭建操作系统实验环境1](cao-zuo-xi-tong/da-jian-cao-zuo-xi-tong-shi-yan-huan-jing-1.md)
+  * [搭建操作系统实验环境2](cao-zuo-xi-tong/da-jian-cao-zuo-xi-tong-shi-yan-huan-jing-2.md)
+  * [用一个创业故事串起操作系统原理1](cao-zuo-xi-tong/yong-yi-ge-chuang-ye-gu-shi-chuan-qi-cao-zuo-xi-tong-yuan-li-1.md)
+  * [用一个创业故事串起操作系统原理2](cao-zuo-xi-tong/yong-yi-ge-chuang-ye-gu-shi-chuan-qi-cao-zuo-xi-tong-yuan-li-2.md)
+  * [用一个创业故事串起操作系统原理3](cao-zuo-xi-tong/yong-yi-ge-chuang-ye-gu-shi-chuan-qi-cao-zuo-xi-tong-yuan-li-3.md)
+  * [用一个创业故事串起操作系统原理4](cao-zuo-xi-tong/yong-yi-ge-chuang-ye-gu-shi-chuan-qi-cao-zuo-xi-tong-yuan-li-4.md)
+  * [用一个创业故事串起操作系统原理5](cao-zuo-xi-tong/yong-yi-ge-chuang-ye-gu-shi-chuan-qi-cao-zuo-xi-tong-yuan-li-5.md)
 
 ## 杂学
 
