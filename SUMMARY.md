@@ -11,6 +11,12 @@
 * [推荐](ye-wu/tui-jian/README.md)
   * [粗排](ye-wu/tui-jian/cu-pai.md)
   * [model bank（unfinish）](ye-wu/tui-jian/model-bank-unfinish.md)
+  * [rapidudf](ye-wu/tui-jian/rapidudf.md)
+  * [ispine](ye-wu/tui-jian/ispine.md)
+  * [Rule规则引擎](ye-wu/tui-jian/rule-gui-ze-yin-qing.md)
+  * [基于apache arrow的高性能向量化在线特征计算引擎](ye-wu/tui-jian/ji-yu-apache-arrow-de-gao-xing-neng-xiang-liang-hua-zai-xian-te-zheng-ji-suan-yin-qing.md)
+  * [apache arrow](ye-wu/tui-jian/apache-arrow.md)
+  * [IMmutable Object Store](ye-wu/tui-jian/immutable-object-store.md)
 
 ## leetcode
 
