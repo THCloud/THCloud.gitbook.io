@@ -477,7 +477,7 @@ repair:
 那窗口大小是多少呢？就是遵循下面这个著名的拥塞窗口变化图。
 
 \
-![](<../.gitbook/assets/image (1) (1) (1).png>)
+![](<../.gitbook/assets/image (1) (1) (1) (1).png>)
 
 \
 

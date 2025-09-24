@@ -53,7 +53,7 @@ long _do_fork(unsigned long clone_flags,
 
 这里我们再把 task\_struct 的结构图拿出来，对比着看如何一个个复制。
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 ```
 static __latent_entropy struct task_struct *copy_process(

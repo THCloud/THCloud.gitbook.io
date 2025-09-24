@@ -245,7 +245,7 @@ qemu 向 Guest OS 模拟 CPU，也模拟其他的硬件，GuestOS 认为自己�
 KVM 内核模块通过 /dev/kvm 暴露接口，用户态程序可以通过 ioctl 来访问这个接口。例如，你可以通过下面的流程编写程序。
 
 \
-![](<../.gitbook/assets/image (1) (1).png>)
+![](<../.gitbook/assets/image (1) (1) (1).png>)
 
 \
 

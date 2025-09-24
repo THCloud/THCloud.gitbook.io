@@ -234,7 +234,7 @@ struct cfs_rq {
 
 到这里终于凑够数据结构了，上面这些数据结构的关系如下图：
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 凑够了数据结构，接下来我们来看调度类是如何工作的。
 

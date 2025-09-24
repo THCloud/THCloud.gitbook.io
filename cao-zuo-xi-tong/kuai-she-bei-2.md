@@ -497,7 +497,7 @@ struct bio_vec {
 在 bio 中，bi\_next 是链表中的下一项，struct bio\_vec 指向一组页面。
 
 \
-![](<../.gitbook/assets/image (1) (1) (1) (1).png>)
+![](<../.gitbook/assets/image (1) (1) (1) (1) (1).png>)
 
 \
 

@@ -284,13 +284,13 @@ PrefixDNN和PostfixDNN两个slice与原有的Dense模型文件描述相同。不
 Numerous目前依赖TensorFlow作为Dense部分的训练引擎。随着Pytorch在业界的兴起，Numerous有必要开始Pytorch训练的支持工作。\
 在Numerous训练框架GPU多机多卡版本的开发中，已经具备了一部分替代能力。当前的训练任务各个进程的关系如图所示：
 
-<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 目前TF进程作为dense部分的训练进程，是以独立进程运行的。
 
 在NPU场景使用pytorch训练，通讯关系调整为：
 
-<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../../.gitbook/assets/image (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 原有的TF进程替换为Pytorch进程，由于NPU的算子开发难度大，sparse计算部分需要支持放在CPU上进行。对应的，sparse之间的通讯机制修改为rpc，worker进程与pytorch进程之间采用共享内存或者IPC通讯。
 
