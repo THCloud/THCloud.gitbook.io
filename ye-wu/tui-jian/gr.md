@@ -230,11 +230,7 @@ class EmbeddingMlpNet(numerous.Model):
 
 #### 5.2.2 模型存储格式 <a href="#id-5.2.2-mo-xing-cun-chu-ge-shi" id="id-5.2.2-mo-xing-cun-chu-ge-shi"></a>
 
-以下是模型实例在存储时以不同slice分开各个单元，下面是一个model.meta实例
-
-```
-1...2"modelSliceDef": [3        {4            "name": "default",5            "type": "dense",6            "files": [7                {8                    "location": "default/slice_graph.ini",9                    "type": "confFile"10                }11            ],12            "deps": []13        }14        {15            "name": "HSTU",16            "type": "dense",17            "files": [18                {19                    "location": "HSTU/graph.pb",20                    "type": "variableData"21                },22                ...23                {24                    "location": "HSTU/config.ini",25                    "type": "confFile"26                }27            ],28            "deps": []29        },30        {31            "name": "PrefixDNN",32            "type": "dense",33            "files": [34                {35                    "location": "PrefixDNN/graph.pb",36                    "type": "variableData"37                },38                39            ],40            "deps": []41        },42        {43            "name": "PostfixDNN",44            "type": "dense",45            "files": [46                {47                    "location": "PostfixDNN/graph.pb",48                    "type": "variableData"49                },50                ...51                52            ],53            "deps": []54        },
-```
+以下是模型实例在存储时以不同slice分开各个单元
 
 PrefixDNN和PostfixDNN两个slice与原有的Dense模型文件描述相同。不同部分在default和HSTU两个slice。
 
@@ -262,7 +258,7 @@ PrefixDNN和PostfixDNN两个slice与原有的Dense模型文件描述相同。不
 
 
 
-在原有的Numerous serving服务结构中，已有tensorflow，TensorRT和Sparse三种引擎的执行和模型加载能力，通过增加一念LLM，可以实现GR模型所需的多引擎执行的能力。同“5.2.2 模型存储格式”中描述的slice关联关系，可以确定不同引擎的执行顺序和数据交换规则。
+在原有的Numerous serving服务结构中，已有tensorflow，TensorRT和Sparse三种引擎的执行和模型加载能力，通过增加yinian LLM，可以实现GR模型所需的多引擎执行的能力。同“5.2.2 模型存储格式”中描述的slice关联关系，可以确定不同引擎的执行顺序和数据交换规则。
 
 性能优化：
 
@@ -275,51 +271,7 @@ PrefixDNN和PostfixDNN两个slice与原有的Dense模型文件描述相同。不
 
 #### &#x20;<a href="#id-5.2.4.2-ye-wu-he-serving-de-jiao-hu-liu-cheng" id="id-5.2.4.2-ye-wu-he-serving-de-jiao-hu-liu-cheng"></a>
 
-#### 5.2.4.4 废弃部分 <a href="#id-5.2.4.4-fei-qi-bu-fen" id="id-5.2.4.4-fei-qi-bu-fen"></a>
-
-**PrefixCaching加速**
-
-&#x20;
-
-本节从业务客户端与无量Serving，RequestManager与Engine之间的交互关系描述PrefixCaching技术在无量Serving框架落地的设计。
-
-客户端与NuSEerving之间交互的Request需要重新定义，Response是用现有服务的Response定义即可
-
-代码解释代码改写
-
-```
-1struct Request{2  ...3  CommonFeatures common_features;  // 与sequence序列无关的通用特征，只进行一次计算4  std::vector<TokenFeatures> prefix_token_features; // 用户历史序列的特征5  std::vector<uint64_t> prefix_cache_tokens;  // 用户历史序列的token_id序列6  std::vector<TokenFeatures> item_features; // 多个item的特征信息，推理返回对应个数的pred结果7  std::vector<uint64_t> item_tokens; // 多个item的特征信息的token id8  ...9}10​11class RondaServing{12  int Predict(Request req, Response resp); // 预测推理13  int ProduceCache(Request req);  // 异步场景，用于提前准备PrefixCache14}15​
-```
-
-这里CommonFeatures和TokenFeatures与训练中的common\_feature\_emb和token\_feature\_emd对应。
-
-为了实现prefix cache的能力，需要维护token\_id与hstu\_input\_emb之间一对一关系。而hstu\_input\_emb是由TokenFeature生成的，所以需要确保TokenFeature与token\_id的一对一映射关系。如果使用hash方式，需要考虑映射的冲突率。这个部分先放在特征工程中以便控制根据具体的TokenFeature值得到token\_id的过程。
-
-&#x20;
-
-在Request结构中，可以有一个用户的多个请求。相同的历史序列放到prefix\_token\_features中。每个请求差异的部分放在item\_features中。注意：这里假定每个请求只有一个差异的item，如果存在每个请求差异有多个item的情况，需要修改结构为双层vector嵌套。
-
-用户可以采用同步和异步两种方式调用方式。
-
-* 同步方式。用户需要输入prefix\_token\_features, prefix\_cache\_tokens, item\_features和item\_tokens。
-
-无量ServingClient无量ServingClientreq.common\_features = FillCommonFeatures(user\_id)1req.prefix\_token\_features = FillPrefixFeatures(user\_id)2req.prefix\_cache\_tokens = GenerateTokenId(req.prefix\_token\_features)3req.item\_features = PrepareItemFeatureSequence()4req.item\_tokens = GenerateTokenId(req.item\_features)5Predict(req, resp)6
-
-* 异步方式。为了降低Predict的耗时，用户可以采用异步的方式调用PrepareCache接口提前将Cache准备好。后期调用Predict接口时，用户可以只传输prefix\_cache\_tokens，，不再传输prefix\_token\_features.
-
-无量ServingClient无量ServingClientalt\[result == ERROR\_CACHE\_MISS]req.prefix\_token\_features = FillPrefixFeatures(user\_id)1req.prefix\_cache\_tokens = GenerateTokenId(req.prefix\_token\_features)2PrepareCache(req)3items = DoOtherThings()4new\_req.prefix\_cache\_tokens = req.prefix\_cache\_tokens5new\_req.common\_features = FillCommonFeatures(user\_id)6new\_req.item\_features = GenerateItemFeatures(items)7new\_req.item\_tokens = GenerateTokenId(new\_req.item\_features)8result = Predict(new\_req, resp)9choose another node, Predict(new\_req, resp)10
-
-&#x20;
-
-**RequestManager接口逻辑**
-
-RequestManager的PrepareCache接口交互关系如下：
-
-一念HSTU一念CacheManager一念EnginePrefixDNN (DenseGraphEngine)Sparse EngineRequestManager无量Serving一念HSTU一念CacheManager一念EnginePrefixDNN (DenseGraphEngine)Sparse EngineRequestManager无量Servingalt\[cache是在上一次PrepareCac-he准备中]alt\[!req.prefix\_features.empty()]alt\[matched\_cache\_token\_num != req.prefix\_cache\_tokens.size()]PrepareCache(req)1matched\_cache\_token\_num = MatchCache(req.prefix\_cache\_tokens)2MatchCache(token\_ids)3等待前面的PrepareCache完成后返回4AllocCache(req.prefix\_cache\_tokens, req.prefix\_feature.size() - matched\_cache\_token\_num)5sparse\_emb = BuildInput(req.prefix\_feature\[matched\_cache\_token\_num, -1])6hstu\_input = Predict(sparse\_emb)7ProduceCache(req.prefix\_cache\_tokens, hstu\_input, matched\_cache\_token\_num)8cache = GetCache(req.prefix\_cache\_tokens)9ProduceCache(req.prefix\_cache\_tokens, hstu\_input, cache, matched\_cache\_token\_num)10return FAIL11
-
-RequestManager的Predict接口交互关系如下：
-
-一念HSTU一念CacheManager一念EnginePostfixDNN (DenseGraphEngine)PrefixDNN (DenseGraphEngine)Sparse EngineRequestManager无量Serving一念HSTU一念CacheManager一念EnginePostfixDNN (DenseGraphEngine)PrefixDNN (DenseGraphEngine)Sparse EngineRequestManager无量Servingalt\[result ==ERROR\_CACHE\_MISS]Predict(Request req)1result = PrepareCache(req)2return ERROR\_CACHE\_MISS3token\_feature\_embs = BuildInput(req.item\_features)4common\_feature\_emb = BuildInput(req.common\_features)5hstu\_input = Predict(token\_feature\_emb)6hstu\_output = Predict(prefix\_cache\_id, hstu\_input)7cache = GetCache(prefixe\_cache\_id)8hstu\_output = Predict(hstu\_input, cache)9pred = Predict(hstu\_output, common\_feature\_emb)10
+#### &#x20;<a href="#id-5.2.4.4-fei-qi-bu-fen" id="id-5.2.4.4-fei-qi-bu-fen"></a>
 
 ### 5.2.5 针对NPU的设计 <a href="#id-5.2.5-zhen-dui-npu-de-she-ji" id="id-5.2.5-zhen-dui-npu-de-she-ji"></a>
 
@@ -329,16 +281,16 @@ RequestManager的Predict接口交互关系如下：
 
 华为NPU与业界生态对接最完备的是Pytorch，在CV/NLP场景下，已经充分验证了包括基于Pytorch的分布式训练框架DeepSpeed。
 
-无量目前依赖TensorFlow作为Dense部分的训练引擎。随着Pytorch在业界的兴起，无量有必要开始Pytorch训练的支持工作。\
-在无量训练框架GPU多机多卡版本的开发中，已经具备了一部分替代能力。当前的训练任务各个进程的关系如图所示：
+Numerous目前依赖TensorFlow作为Dense部分的训练引擎。随着Pytorch在业界的兴起，Numerous有必要开始Pytorch训练的支持工作。\
+在Numerous训练框架GPU多机多卡版本的开发中，已经具备了一部分替代能力。当前的训练任务各个进程的关系如图所示：
 
-![](https://iwiki.woa.com/tencent/api/attachments/s3/url?attachmentid=22156073)
+<figure><img src="../../.gitbook/assets/image.png" alt=""><figcaption></figcaption></figure>
 
 目前TF进程作为dense部分的训练进程，是以独立进程运行的。
 
 在NPU场景使用pytorch训练，通讯关系调整为：
 
-![](https://iwiki.woa.com/tencent/api/attachments/s3/url?attachmentid=22156092)
+<figure><img src="../../.gitbook/assets/image (1).png" alt=""><figcaption></figcaption></figure>
 
 原有的TF进程替换为Pytorch进程，由于NPU的算子开发难度大，sparse计算部分需要支持放在CPU上进行。对应的，sparse之间的通讯机制修改为rpc，worker进程与pytorch进程之间采用共享内存或者IPC通讯。
 
@@ -346,72 +298,12 @@ RequestManager的Predict接口交互关系如下：
 
 #### 推理 <a href="#tui-li" id="tui-li"></a>
 
-一念负责支持HSTU在NPU上的执行，DenseGraphEngine如果要在NPU上运行，接入OnnxRuntime作为引擎来支持。
+yinian负责支持HSTU在NPU上的执行，DenseGraphEngine如果要在NPU上运行，接入OnnxRuntime作为引擎来支持。
 
-### 5.3 典型场景结果 <a href="#id-5.3-dian-xing-chang-jing-jie-guo" id="id-5.3-dian-xing-chang-jing-jie-guo"></a>
 
-这里回答“4.1.3”节提到的几个问题
 
-* 问题1: HSTU前向/反向计算时间长。通过在训练和推理上使用高度定制化的融合算子来解决
-* 问题2: 线上推理资源需求成数量级增长的问题。通过Prefix Caching的技术来实现将计算复杂度从O(prefix\_token\_num\*item\_num)下降为O(prefix\_token\_num+item\_num)
-* 问题3：LLM相关推理优化技术难以应用在GR场景的问题。通过将一念LLM封装成为独立的计算引擎，并定制Cache管理接口，实现PrefixCaching技术的接入。
-
-### 5.4 相关场景结果 <a href="#id-5.4-xiang-guan-chang-jing-jie-guo" id="id-5.4-xiang-guan-chang-jing-jie-guo"></a>
-
-这里回答“4.2”节提到的问题
-
+* HSTU前向/反向计算时间长。通过在训练和推理上使用高度定制化的融合算子来解决
+* 线上推理资源需求成数量级增长的问题。通过Prefix Caching的技术来实现将计算复杂度从O(prefix\_token\_num\*item\_num)下降为O(prefix\_token\_num+item\_num)
+* LLM相关推理优化技术难以应用在GR场景的问题。通过将yinian LLM封装成为独立的计算引擎，并定制Cache管理接口，实现PrefixCaching技术的接入。
 * 问题4: 硬件供应商的问题。通过“5.2.5 针对NPU的设计”, 可以实现训练和推理都采用NPU。
 
-### 5.5 可运营性设计 <a href="#id-5.5-ke-yun-ying-xing-she-ji" id="id-5.5-ke-yun-ying-xing-she-ji"></a>
-
-TODO
-
-### 5.6 测试计划 <a href="#id-5.6-ce-shi-ji-hua" id="id-5.6-ce-shi-ji-hua"></a>
-
-TODO
-
-### 5.7 灰度/发布计划 <a href="#id-5.7-hui-du-fa-bu-ji-hua" id="id-5.7-hui-du-fa-bu-ji-hua"></a>
-
-TODO
-
-## 6. 进度与成本 <a href="#id-6.-jin-du-yu-cheng-ben" id="id-6.-jin-du-yu-cheng-ben"></a>
-
-### 6.1 分期目标与工作项 <a href="#id-6.1-fen-qi-mu-biao-yu-gong-zuo-xiang" id="id-6.1-fen-qi-mu-biao-yu-gong-zuo-xiang"></a>
-
-#### 里程碑一：用GPU完成全流程的打通 <a href="#li-cheng-bei-yi-yong-gpu-wan-cheng-quan-liu-cheng-de-da-tong" id="li-cheng-bei-yi-yong-gpu-wan-cheng-quan-liu-cheng-de-da-tong"></a>
-
-**在线Serving部分**
-
-**同步接口流程打通-P0**
-
-1. 交互协议确定，确定serving对外的proto接口协议；确定serving和一念交互的方式和接口协议。2d（前置依赖：一念接口定义）
-2. 引入so，统一编译和运行环境。2d
-3. 一念的模型加载逻辑。2d
-4. 打通同步流程。
-   1. 接口协议解析\&buildinput-3d
-   2. preparecache以及一念交互逻辑-4d
-   3. 一念predict交互逻辑-2d
-   4. prefixdnn和postdnn逻辑，流程串联-3d
-5. 其他容错流程。3d
-
-**异步接口流程打通-P1**
-
-**性能和工程优化-P1**
-
-1. 显存控制
-2. prefixDNN和postfixDNN计算使用gpu/引入trt推理加速
-3. 组batch逻辑
-4. 模型加载后的预热逻辑
-5. prefixid和feature的映射检查
-6. prefixid对应的计算结果缓存，单节点包之间只计算一次
-
-#### 里程碑二：训练接入NPU <a href="#li-cheng-bei-er-xun-lian-jie-ru-npu" id="li-cheng-bei-er-xun-lian-jie-ru-npu"></a>
-
-### 6.2 技术债 <a href="#id-6.2-ji-shu-zhai" id="id-6.2-ji-shu-zhai"></a>
-
-解决了：无量强依赖tf的问题\
-新问题：tf依赖问题，模型脚本迁移无法做到无损
-
-有什么样的方法可以降低新的技术债。
-
-评论妙笔创建TAPD\

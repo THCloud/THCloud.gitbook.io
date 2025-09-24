@@ -217,7 +217,7 @@ Linux 也采取了这样的手段，就是在物理机上面创建虚拟机。�
 qemu 向 Guest OS 模拟 CPU，也模拟其他的硬件，GuestOS 认为自己和硬件直接打交道，其实是同 qemu 模拟出来的硬件打交道，qemu 会将这些指令转译给真正的硬件。由于所有的指令都要从 qemu 里面过一手，因而性能就会比较差。
 
 \
-![](../.gitbook/assets/image.png)
+![](<../.gitbook/assets/image (2).png>)
 
 \
 
@@ -245,7 +245,7 @@ qemu 向 Guest OS 模拟 CPU，也模拟其他的硬件，GuestOS 认为自己�
 KVM 内核模块通过 /dev/kvm 暴露接口，用户态程序可以通过 ioctl 来访问这个接口。例如，你可以通过下面的流程编写程序。
 
 \
-![](<../.gitbook/assets/image (1).png>)
+![](<../.gitbook/assets/image (1) (1).png>)
 
 \
 
@@ -272,7 +272,7 @@ qemu 和 kvm 整合之后，CPU 的性能问题解决了。另外 Qemu 还会模
 
 至此，整个关系如下图所示。
 
-![](<../.gitbook/assets/image (2).png>)\
+![](<../.gitbook/assets/image (2) (1).png>)\
 
 
 ### 创建虚拟机

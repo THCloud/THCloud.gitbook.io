@@ -178,7 +178,7 @@ struct sched_entity {
 
 下图是一个红黑树的例子。
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 所有可运行的进程通过不断地插入操作最终都存储在以时间为顺序的红黑树中，vruntime 最小的在树的左侧，vruntime 最多的在树的右侧。 CFS 调度策略会选择红黑树最左边的叶子节点作为下一个将获得 CPU 的任务。
 
@@ -234,7 +234,7 @@ struct cfs_rq {
 
 到这里终于凑够数据结构了，上面这些数据结构的关系如下图：
 
-<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (1) (1) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
 
 凑够了数据结构，接下来我们来看调度类是如何工作的。
 
@@ -395,4 +395,4 @@ struct sched_entity *__pick_first_entity(struct cfs_rq *cfs_rq)
 
 在调度的时候，依次调用调度类的函数，从 CPU 的队列中取出下一个进程。上面图中的调度器、上下文切换这一节我们没有讲，下一节我们讲讲基于这些数据结构，如何实现调度。
 
-<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>
+<figure><img src="../.gitbook/assets/image (2) (1) (1) (1) (1) (1) (1) (1).png" alt=""><figcaption></figcaption></figure>

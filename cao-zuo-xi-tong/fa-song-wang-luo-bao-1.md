@@ -477,7 +477,7 @@ repair:
 那窗口大小是多少呢？就是遵循下面这个著名的拥塞窗口变化图。
 
 \
-![](<../.gitbook/assets/image (1) (1).png>)
+![](<../.gitbook/assets/image (1) (1) (1).png>)
 
 \
 
@@ -495,7 +495,7 @@ repair:
 第三个概念就是**接收窗口** rwnd 的概念（receive window），也叫滑动窗口。如果说拥塞窗口是为了怕把网络塞满，在出现丢包的时候减少发送速度，那么滑动窗口就是为了怕把接收方塞满，而控制发送速度。
 
 \
-![](<../.gitbook/assets/image (2) (1).png>)
+![](<../.gitbook/assets/image (2) (1) (1).png>)
 
 \
 
