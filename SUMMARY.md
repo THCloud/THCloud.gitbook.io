@@ -25,6 +25,7 @@
   * [sos](ye-wu/tui-jian/sos.md)
   * [ali](ye-wu/tui-jian/ali.md)
   * [搜索](ye-wu/tui-jian/sou-suo.md)
+  * [短链](ye-wu/tui-jian/duan-lian.md)
 
 ## leetcode
 
