@@ -75,7 +75,13 @@ Sched：记录全局这些信息
 
 
 
-### 定时m
+### 定时
 
+每个p有一个四叉堆，四叉堆比二叉堆更矮效率更高，
 
+schedule时候轮询查timer
+
+sysmon查询每个p的堆顶元素
+
+netpoll函数，类似epoll\_wait的一种唤醒机制
 
